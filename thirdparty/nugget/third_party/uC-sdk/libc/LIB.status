@@ -1,0 +1,192 @@
+Stdlib:
+------
+
+What should stdlib contain, and current status.
+
+atof     - ok, inlined, bound to sscanf
+atoi     - ok, inlined, bound to strtol
+atol     - ok, inlined, bound to strtol
+strtod   - missing
+strtof   - missing
+strtold  - missing (do we want to support long double anyway?)
+strtol   - ok
+strtoul  - missing
+strtoq   - missing
+strtouq  - missing
+strtoll  - missing (same as strtoq, different "standard")
+strtoull - missing (same as strtouq, different "standard")
+
+
+no locale function at all (__strtol_l, etc...)
+
+
+random    - missing
+srandom   - missing
+initstate - missing
+setstate  - missing
+rand      - ok
+rand_r    - ok
+srand     - ok
+drand48   - missing
+
+all *rand48 missing
+
+malloc, calloc, realloc, free, are implemented, but not thread-safe
+
+abort  - missing
+atexit - ok
+exit   - ok
+
+getenv - missing
+setenv - missing
+
+system - missing, and won't be here anyway I think...
+
+bsearch - missing
+qsort   - ok, stolen from libnix
+abs     - missing
+labs    - missing
+llabs   - missing
+div     - missing
+ldiv    - missing
+lldiv   - missing
+frexp   - missing
+ldexp   - missing
+
+ecvt    - missing
+fcvt    - missing
+gcvt    - missing
+
+mblen, mbtowc, wctomb, mbstowcs, wcstombs - missing
+
+
+Stdio/Unistd:
+------------
+
+stdin, stdout, stderr - ok
+
+Also, should have buffering...
+
+remove     - missing
+rename     - missing
+tmp*       - missing
+fclose     - ok, inlined
+fflush     - ok, dummy function
+fcloseall  - missing, won't implement (we don't keep track of the FILE pointers)
+fopen      - ok, inlined
+freopen    - ok, inlined
+fdopen     - ok, inlined
+setbuf     - missing
+setvbuf    - missing
+
+*printf    - ok, v-versions inlined (f, s, d, sn, as + x)
+*scanf     - ok, v-versions inlined (f, s, d + x)
+*getc      - ok, inlined (f, .)
+getchar    - missing
+*putc      - missing
+putchar    - missing
+{get,put}w - missing
+*gets      - ok, fgets only.
+getdelim   - missing, gnu replacement to gets
+getline    - missing, gnu replacement to gets
+*puts      - missing
+ungetc     - missing, won't implement, as we don't bufferize at all.
+fread      - ok, inlined
+fwrite     - ok, inlined
+fseek      - ok, inlined
+ftell      - ok, inlined
+rewind     - ok, inlined
+fgetpos    - missing
+fsetpos    - missing
+clearerr   - missing
+feof       - ok, inlined
+ferror     - missing
+
+perror     - missing
+fileno     - ok, inlined
+pipe funcs - missing, can we make them ?
+lock funcs - missing, can we make them ?
+
+mkdir      - missing
+rmdir      - missing
+
+chdir      - missing
+getcwd     - missing
+
+open       - ok
+close      - ok
+read       - ok
+write      - ok
+lseek      - ok
+
+
+String:
+------
+
+memcpy      - ok
+memmove     - ok
+memset      - ok
+memcmp      - ok
+memchr      - ok, inlined
+
+strcpy      - ok, inlined
+strncpy     - ok, inlined
+strcat      - ok, inlined
+strncat     - ok, inlined
+strcmp      - ok, inlined
+strncmp     - ok, inlined
+
+strcoll     - missing
+strxfrm     - missing
+
+strdup      - ok, inlined
+
+strchr      - ok, inlined
+strrchr     - ok, inlined
+
+strcspn     - missing
+strspn      - missing
+strpbrk     - missing
+strstr      - ok, inlined, dummy implementation (kmp eats too much stack space)
+strcasestr  - missing
+strtok      - missing
+
+strlen      - ok, inlined
+strerror    - missing, won't implement
+
+bzero       - missing
+bcopy       - missing
+bcmp        - missing
+index       - missing
+rindex      - missing
+
+stricmp     - missing
+strcasecmp  - missing
+strnicmp    - missing
+strncasecmp - missing
+
+isalnum     - ok, inlined
+iscntrl     - ok, inlined
+isdigit     - ok, inlined
+isgraph     - ok, inlined
+islower     - ok, inlined
+isprint     - ok, inlined
+ispunct     - ok, inlined
+isspace     - ok, inlined
+isupper     - ok, inlined
+isxdigit    - ok, inlined
+tolower     - ok, inlined
+toupper     - ok, inlined
+
+asctime     - missing
+clock       - missing
+ctime       - missing
+difftime    - missing
+gmtime      - missing
+localtime   - missing
+mktime      - missing
+
+longjmp     - cortex-m3, untested
+setjmp      - cortex-m3, untested
+
+raise       - missing, can we build signals ?

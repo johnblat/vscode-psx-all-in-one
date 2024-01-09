@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.gtpl": "html",
+        "erb": "html",
+        "types.h": "c"
+    }
+}
