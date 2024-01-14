@@ -1,0 +1,258 @@
+2024/01/13 17:51:49 Starting cygwin install, version 2.926
+2024/01/13 17:51:49 User has backup/restore rights
+2024/01/13 17:51:49 User has symlink creation right
+2024/01/13 17:51:49 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2024/01/13 17:51:49 Current Directory: C:\Users\johnb\Downloads
+2024/01/13 17:51:54 source: network install
+2024/01/13 17:51:57 root: C:\cygwin64 system
+2024/01/13 17:51:57 Changing gid to Administrators
+2024/01/13 17:52:08 Selected local directory: C:\Users\johnb\Downloads
+2024/01/13 17:52:12 net: Preconfig
+2024/01/13 17:52:17 site: https://mirrors.163.com/cygwin/
+2024/01/13 17:52:22 io_stream_cygfile: fopen(/etc/setup/timestamp) failed 2 No such file or directory
+2024/01/13 17:52:22 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2024/01/13 17:52:22 solving: 38 tasks, update: yes, use test packages: no
+2024/01/13 17:53:01 solving: 75 tasks, update: no, use test packages: no
+2024/01/13 17:53:01 Augmented Transaction List:
+2024/01/13 17:53:01    0 install libpopt-common  1.19-1                   
+2024/01/13 17:53:01    1 install terminfo        6.4-3.20230114           
+2024/01/13 17:53:01    2 install tzdata          2023d-1                  
+2024/01/13 17:53:01    3 install cygwin          3.4.10-1                 
+2024/01/13 17:53:01    4 install libiconv2       1.17-1                   
+2024/01/13 17:53:01    5 install libintl8        0.22.4-1                 
+2024/01/13 17:53:01    6 install libncursesw10   6.4-3.20230114           
+2024/01/13 17:53:01    7 install libreadline7    8.2-2                    
+2024/01/13 17:53:01    8 install bash            5.2.15-3                 
+2024/01/13 17:53:01    9 install libzstd1        1.5.5-1                  
+2024/01/13 17:53:01   10 install crypto-policies 20190218-1               
+2024/01/13 17:53:01   11 install base-cygwin     3.8-2                    
+2024/01/13 17:53:01   12 install zlib0           1.3-1                    
+2024/01/13 17:53:01   13 install which           2.20-2                   
+2024/01/13 17:53:01   14 install vim-minimal     9.0.2155-2               
+2024/01/13 17:53:01   15 install tzcode          2023d-1                  
+2024/01/13 17:53:01   16 install sed             4.9-1                    
+2024/01/13 17:53:01   17 install run             1.3.4-2                  
+2024/01/13 17:53:01   18 install ncurses         6.4-3.20230114           
+2024/01/13 17:53:01   19 install mintty          3.7.0-1                  
+2024/01/13 17:53:01   20 install login           1.13-1                   
+2024/01/13 17:53:01   21 install libtasn1_6      4.14-1                   
+2024/01/13 17:53:01   22 install libsmartcols1   2.33.1-2                 
+2024/01/13 17:53:01   23 install libpopt0        1.19-1                   
+2024/01/13 17:53:01   24 install libpipeline1    1.5.6-1                  
+2024/01/13 17:53:01   25 install libpcre2_8_0    10.42-1                  
+2024/01/13 17:53:01   26 install libpcre1        8.45-1                   
+2024/01/13 17:53:01   27 install liblzma5        5.4.5-1                  
+2024/01/13 17:53:01   28 install liblz4_1        1.9.4-1                  
+2024/01/13 17:53:01   29 install libgmp10        6.3.0-1                  
+2024/01/13 17:53:01   30 install libgcc1         11.4.0-1                 
+2024/01/13 17:53:01   31 install libffi6         3.2.1-2                  
+2024/01/13 17:53:01   32 install libbz2_1        1.0.8-1                  
+2024/01/13 17:53:01   33 install libattr1        2.5.1-1.20.g0981a7bfe487 
+2024/01/13 17:53:01   34 install libargp         20230708-2               
+2024/01/13 17:53:01   35 install ipc-utils       1.1-1                    
+2024/01/13 17:53:01   36 install hostname        3.13-1                   
+2024/01/13 17:53:01   37 install gzip            1.13-1                   
+2024/01/13 17:53:01   38 install editrights      1.04-1                   
+2024/01/13 17:53:01   39 install diffutils       3.10-1                   
+2024/01/13 17:53:01   40 install dash            0.5.12-2                 
+2024/01/13 17:53:01   41 install alternatives    1.3.30c-10               
+2024/01/13 17:53:01   42 install cygutils        1.4.17-1                 
+2024/01/13 17:53:01   43 install grep            3.11-1                   
+2024/01/13 17:53:01   44 install less            643-1                    
+2024/01/13 17:53:01   45 install xz              5.4.5-1                  
+2024/01/13 17:53:01   46 install libuuid1        2.33.1-2                 
+2024/01/13 17:53:01   47 install libstdc++6      11.4.0-1                 
+2024/01/13 17:53:01   48 install libmpfr6        4.2.1-1                  
+2024/01/13 17:53:01   49 install libgdbm6        1.18.1-1                 
+2024/01/13 17:53:01   50 install libp11-kit0     0.23.20-1                
+2024/01/13 17:53:01   51 install file            5.44-1                   
+2024/01/13 17:53:01   52 install bzip2           1.0.8-1                  
+2024/01/13 17:53:01   53 install coreutils       9.0-1                    
+2024/01/13 17:53:01   54 install getent          2.18.90-5                
+2024/01/13 17:53:01   55 install rebase          4.6.6-1                  
+2024/01/13 17:53:01   56 install info            7.0.3-3                  
+2024/01/13 17:53:01   57 install _autorebase     001091-1                 
+2024/01/13 17:53:01   58 install libblkid1       2.33.1-2                 
+2024/01/13 17:53:01   59 install zstd            1.5.5-1                  
+2024/01/13 17:53:01   60 install libuchardet0    0.0.8-1                  
+2024/01/13 17:53:01   61 install gawk            5.3.0-1                  
+2024/01/13 17:53:01   62 install p11-kit-trust   0.23.20-1                
+2024/01/13 17:53:01   63 install p11-kit         0.23.20-1                
+2024/01/13 17:53:01   64 install findutils       4.9.0-1                  
+2024/01/13 17:53:01   65 install libfdisk1       2.33.1-2                 
+2024/01/13 17:53:01   66 install tar             1.35-1                   
+2024/01/13 17:53:01   67 install groff           1.23.0-1                 
+2024/01/13 17:53:01   68 install ca-certificates 2023.2.62_v7.0.401-2     
+2024/01/13 17:53:01   69 install base-files      4.3-3                    
+2024/01/13 17:53:01   70 install util-linux      2.33.1-2                 
+2024/01/13 17:53:01   71 install libssl3         3.0.12-1                 
+2024/01/13 17:53:01   72 install libssl1.1       1.1.1w-1                 
+2024/01/13 17:53:01   73 install man-db          2.12.0-1                 
+2024/01/13 17:53:01   74 install openssl         3.0.12-1                 
+2024/01/13 17:53:05 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt-common/libpopt-common-1.19-1.tar.xz
+2024/01/13 17:53:06 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/terminfo/terminfo-6.4-3.20230114.tar.xz
+2024/01/13 17:53:07 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/tzdata/tzdata-2023d-1.tar.xz
+2024/01/13 17:53:08 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygwin/cygwin-3.4.10-1.tar.xz
+2024/01/13 17:53:08 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libiconv/libiconv2/libiconv2-1.17-1.tar.xz
+2024/01/13 17:53:09 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gettext/libintl8/libintl8-0.22.4-1.tar.xz
+2024/01/13 17:53:09 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/libncursesw10/libncursesw10-6.4-3.20230114.tar.xz
+2024/01/13 17:53:11 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/readline/libreadline7/libreadline7-8.2-2.tar.xz
+2024/01/13 17:53:11 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bash/bash-5.2.15-3.tar.xz
+2024/01/13 17:53:12 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/libzstd1/libzstd1-1.5.5-1.tar.zst
+2024/01/13 17:53:12 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/crypto-policies/crypto-policies-20190218-1.tar.xz
+2024/01/13 17:53:13 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-cygwin/base-cygwin-3.8-2.tar.xz
+2024/01/13 17:53:13 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zlib/zlib0/zlib0-1.3-1.tar.zst
+2024/01/13 17:53:13 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/which/which-2.20-2.tar.bz2
+2024/01/13 17:53:14 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/vim/vim-minimal/vim-minimal-9.0.2155-2.tar.xz
+2024/01/13 17:53:14 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tzcode/tzcode-2023d-1.tar.xz
+2024/01/13 17:53:15 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/sed/sed-4.9-1.tar.xz
+2024/01/13 17:53:16 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/run/run-1.3.4-2.tar.xz
+2024/01/13 17:53:16 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/ncurses-6.4-3.20230114.tar.xz
+2024/01/13 17:53:17 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mintty/mintty-3.7.0-1.tar.xz
+2024/01/13 17:53:17 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/login/login-1.13-1.tar.xz
+2024/01/13 17:53:17 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libtasn1/libtasn1_6/libtasn1_6-4.14-1.tar.xz
+2024/01/13 17:53:18 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.33.1-2.tar.xz
+2024/01/13 17:53:18 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt0/libpopt0-1.19-1.tar.xz
+2024/01/13 17:53:18 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libpipeline/libpipeline1/libpipeline1-1.5.6-1.tar.xz
+2024/01/13 17:53:19 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre2/libpcre2_8_0/libpcre2_8_0-10.42-1.tar.zst
+2024/01/13 17:53:19 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre/libpcre1/libpcre1-8.45-1.tar.zst
+2024/01/13 17:53:19 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/liblzma5/liblzma5-5.4.5-1.tar.zst
+2024/01/13 17:53:21 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/lz4/liblz4_1/liblz4_1-1.9.4-1.tar.xz
+2024/01/13 17:53:21 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gmp/libgmp10/libgmp10-6.3.0-1.tar.zst
+2024/01/13 17:53:21 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libgcc1/libgcc1-11.4.0-1.tar.zst
+2024/01/13 17:53:22 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libffi/libffi6/libffi6-3.2.1-2.tar.xz
+2024/01/13 17:53:22 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/libbz2_1/libbz2_1-1.0.8-1.tar.xz
+2024/01/13 17:53:23 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/attr/libattr1/libattr1-2.5.1-1.20.g0981a7bfe487.tar.xz
+2024/01/13 17:53:23 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libargp/libargp-20230708-2.tar.xz
+2024/01/13 17:53:23 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ipc-utils/ipc-utils-1.1-1.tar.xz
+2024/01/13 17:53:23 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/hostname/hostname-3.13-1.tar.bz2
+2024/01/13 17:53:24 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gzip/gzip-1.13-1.tar.xz
+2024/01/13 17:53:25 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/editrights/editrights-1.04-1.tar.xz
+2024/01/13 17:53:26 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/diffutils/diffutils-3.10-1.tar.xz
+2024/01/13 17:53:26 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/dash/dash-0.5.12-2.tar.xz
+2024/01/13 17:53:27 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2024/01/13 17:53:27 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygutils/cygutils-1.4.17-1.tar.xz
+2024/01/13 17:53:27 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/grep/grep-3.11-1.tar.xz
+2024/01/13 17:53:28 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/less/less-643-1.tar.xz
+2024/01/13 17:53:28 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/xz-5.4.5-1.tar.zst
+2024/01/13 17:53:28 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.33.1-2.tar.xz
+2024/01/13 17:53:29 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libstdc++6/libstdc++6-11.4.0-1.tar.zst
+2024/01/13 17:53:29 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mpfr/libmpfr6/libmpfr6-4.2.1-1.tar.zst
+2024/01/13 17:53:29 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gdbm/libgdbm6/libgdbm6-1.18.1-1.tar.xz
+2024/01/13 17:53:30 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/libp11-kit0/libp11-kit0-0.23.20-1.tar.xz
+2024/01/13 17:53:31 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/file/file-5.44-1.tar.xz
+2024/01/13 17:53:31 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/bzip2-1.0.8-1.tar.xz
+2024/01/13 17:53:34 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/coreutils/coreutils-9.0-1.tar.xz
+2024/01/13 17:53:34 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/getent/getent-2.18.90-5.tar.xz
+2024/01/13 17:53:34 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rebase/rebase-4.6.6-1.tar.xz
+2024/01/13 17:53:35 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/texinfo/info/info-7.0.3-3.tar.xz
+2024/01/13 17:53:36 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/_autorebase/_autorebase-001091-1.tar.zst
+2024/01/13 17:53:36 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.33.1-2.tar.xz
+2024/01/13 17:53:37 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/zstd-1.5.5-1.tar.zst
+2024/01/13 17:53:37 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/uchardet/libuchardet0/libuchardet0-0.0.8-1.tar.zst
+2024/01/13 17:53:38 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gawk/gawk-5.3.0-1.tar.xz
+2024/01/13 17:53:39 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-trust/p11-kit-trust-0.23.20-1.tar.xz
+2024/01/13 17:53:39 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-0.23.20-1.tar.xz
+2024/01/13 17:53:40 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/findutils/findutils-4.9.0-1.tar.xz
+2024/01/13 17:53:40 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.33.1-2.tar.xz
+2024/01/13 17:53:41 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tar/tar-1.35-1.tar.zst
+2024/01/13 17:53:43 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/groff/groff-1.23.0-1.tar.zst
+2024/01/13 17:53:43 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/ca-certificates/ca-certificates-2023.2.62_v7.0.401-2.tar.zst
+2024/01/13 17:53:43 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-files/base-files-4.3-3.tar.zst
+2024/01/13 17:53:44 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/util-linux-2.33.1-2.tar.xz
+2024/01/13 17:53:44 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl3/libssl3-3.0.12-1.tar.zst
+2024/01/13 17:53:45 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl1.1/libssl1.1-1.1.1w-1.tar.zst
+2024/01/13 17:53:46 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/man-db/man-db-2.12.0-1.tar.zst
+2024/01/13 17:53:47 Downloaded C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/openssl-3.0.12-1.tar.zst
+2024/01/13 17:53:47 Registry value set: HKEY_LOCAL_MACHINE\Software\Cygwin\setup\rootdir = "C:\cygwin64"
+2024/01/13 17:53:47 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt-common/libpopt-common-1.19-1.tar.xz
+2024/01/13 17:53:47 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/terminfo/terminfo-6.4-3.20230114.tar.xz
+2024/01/13 17:53:47 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/tzdata/tzdata-2023d-1.tar.xz
+2024/01/13 17:53:49 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygwin/cygwin-3.4.10-1.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libiconv/libiconv2/libiconv2-1.17-1.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gettext/libintl8/libintl8-0.22.4-1.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/libncursesw10/libncursesw10-6.4-3.20230114.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/readline/libreadline7/libreadline7-8.2-2.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bash/bash-5.2.15-3.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/libzstd1/libzstd1-1.5.5-1.tar.zst
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/crypto-policies/crypto-policies-20190218-1.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-cygwin/base-cygwin-3.8-2.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zlib/zlib0/zlib0-1.3-1.tar.zst
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/which/which-2.20-2.tar.bz2
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/vim/vim-minimal/vim-minimal-9.0.2155-2.tar.xz
+2024/01/13 17:53:50 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tzcode/tzcode-2023d-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/sed/sed-4.9-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/run/run-1.3.4-2.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/ncurses-6.4-3.20230114.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mintty/mintty-3.7.0-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/login/login-1.13-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libtasn1/libtasn1_6/libtasn1_6-4.14-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.33.1-2.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt0/libpopt0-1.19-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libpipeline/libpipeline1/libpipeline1-1.5.6-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre2/libpcre2_8_0/libpcre2_8_0-10.42-1.tar.zst
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre/libpcre1/libpcre1-8.45-1.tar.zst
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/liblzma5/liblzma5-5.4.5-1.tar.zst
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/lz4/liblz4_1/liblz4_1-1.9.4-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gmp/libgmp10/libgmp10-6.3.0-1.tar.zst
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libgcc1/libgcc1-11.4.0-1.tar.zst
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libffi/libffi6/libffi6-3.2.1-2.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/libbz2_1/libbz2_1-1.0.8-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/attr/libattr1/libattr1-2.5.1-1.20.g0981a7bfe487.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libargp/libargp-20230708-2.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ipc-utils/ipc-utils-1.1-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/hostname/hostname-3.13-1.tar.bz2
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gzip/gzip-1.13-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/editrights/editrights-1.04-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/diffutils/diffutils-3.10-1.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/dash/dash-0.5.12-2.tar.xz
+2024/01/13 17:53:51 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygutils/cygutils-1.4.17-1.tar.xz
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/grep/grep-3.11-1.tar.xz
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/less/less-643-1.tar.xz
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/xz-5.4.5-1.tar.zst
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.33.1-2.tar.xz
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libstdc++6/libstdc++6-11.4.0-1.tar.zst
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mpfr/libmpfr6/libmpfr6-4.2.1-1.tar.zst
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gdbm/libgdbm6/libgdbm6-1.18.1-1.tar.xz
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/libp11-kit0/libp11-kit0-0.23.20-1.tar.xz
+2024/01/13 17:53:52 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/file/file-5.44-1.tar.xz
+2024/01/13 17:53:53 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/bzip2-1.0.8-1.tar.xz
+2024/01/13 17:53:53 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/coreutils/coreutils-9.0-1.tar.xz
+2024/01/13 17:53:53 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/getent/getent-2.18.90-5.tar.xz
+2024/01/13 17:53:53 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rebase/rebase-4.6.6-1.tar.xz
+2024/01/13 17:53:53 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/texinfo/info/info-7.0.3-3.tar.xz
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/_autorebase/_autorebase-001091-1.tar.zst
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.33.1-2.tar.xz
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/zstd-1.5.5-1.tar.zst
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/uchardet/libuchardet0/libuchardet0-0.0.8-1.tar.zst
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gawk/gawk-5.3.0-1.tar.xz
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-trust/p11-kit-trust-0.23.20-1.tar.xz
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-0.23.20-1.tar.xz
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/findutils/findutils-4.9.0-1.tar.xz
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.33.1-2.tar.xz
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tar/tar-1.35-1.tar.zst
+2024/01/13 17:53:54 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/groff/groff-1.23.0-1.tar.zst
+2024/01/13 17:53:55 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/ca-certificates/ca-certificates-2023.2.62_v7.0.401-2.tar.zst
+2024/01/13 17:53:55 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-files/base-files-4.3-3.tar.zst
+2024/01/13 17:53:56 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/util-linux-2.33.1-2.tar.xz
+2024/01/13 17:53:56 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl3/libssl3-3.0.12-1.tar.zst
+2024/01/13 17:53:56 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl1.1/libssl1.1-1.1.1w-1.tar.zst
+2024/01/13 17:53:56 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/man-db/man-db-2.12.0-1.tar.zst
+2024/01/13 17:53:57 Extracting from file://C:\Users\johnb\Downloads/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/openssl-3.0.12-1.tar.zst
+2024/01/13 17:53:57 running: C:\cygwin64\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2024/01/13 17:53:59 running: C:\cygwin64\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2024/01/13 17:54:00 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/000-cygwin-post-install.sh"
+2024/01/13 17:54:00 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/coreutils.sh"
+2024/01/13 17:54:01 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-mketc.sh"
+2024/01/13 17:54:01 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-profile.sh"
+2024/01/13 17:54:01 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/p11-kit.sh"
+2024/01/13 17:54:01 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/ca-certificates.sh"
+2024/01/13 17:54:03 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/crypto-policies.sh"
+2024/01/13 17:54:04 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/openssl.sh"
+2024/01/13 17:54:05 can't run /etc/postinstall/openssl.sh: No such file
+2024/01/13 17:54:05 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/man-db.sh"
+2024/01/13 17:54:05 running: C:\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/mintty.sh"
+2024/01/13 17:54:05 running: C:\cygwin64\bin\dash.exe "/etc/postinstall/zp_man-db-update-index.dash"
+2024/01/13 17:54:12 note: Installation Complete
+2024/01/13 17:54:12 Ending cygwin install

@@ -11,7 +11,7 @@
         "stopAtConnect": true,
         "executable": "./main.elf",
         "windows": {
-            "gdbpath": "${workspaceFolder}/gdb-multiarch-12.1/bin/gdb.exe",
+            "gdbpath": "${workspaceFolder}/tools/gdb-multiarch-12.1/bin/gdb.exe",
         },
         "cwd": "${workspaceRoot}",
         "autorun": [
@@ -24,6 +24,6 @@
         ],
         "valuesFormatting": "parseText",
         "preLaunchTask": "Build hello_poly"
-    }
+        }
     ]
 }

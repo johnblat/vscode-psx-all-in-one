@@ -1,0 +1,130 @@
+    Copyright (C) 1989-2023 Free Software Foundation, Inc.
+
+    Copying and distribution of this file, with or without
+    modification, are permitted in any medium without royalty provided
+    the copyright notice and this notice are preserved.
+
+This is the 'groff' document formatting system, a reimplementation and
+extension of the AT&T Unix 'troff' system.  The version number is given
+in the file '.tarball-version' if you are building from a distribution
+archive; otherwise, building from its Git repository will store it in
+the file '.version'.
+
+This release includes original implementations (not derived from AT&T
+Unix code) of the 'troff', 'nroff', 'pic', 'eqn', 'tbl', 'refer', and
+'soelim' programs; the 'man' and 'ms' macro packages; and output drivers
+for PostScript, PDF, and TeX DVI file formats, HP LaserJet 4- and Canon
+CaPSL-compatible printers, HTML and XHTML (in beta status), and
+typewriter/terminal devices.
+
+It also provides modified versions of BSD Unix additions to Unix troff:
+the 'grn' preprocessor, and the 'mdoc' and 'me' macro packages.
+'gxditview', an enhanced version of the X11 'xditview' previewer for
+'troff' device-independent output, originates from X11R5.
+
+Contributed components feature a reimplementation and extension of the
+DWB 'troff' 'mm' macro package by Joergen Haegg, Peter Schaffter's 'mom'
+macro package, and Bernd Warken's reimplementation of the 'chem'
+preprocessor in Perl.
+
+See the file 'INSTALL.extra' for instructions on how to install from a
+distribution archive, such as a release, beta, or release candidate.
+
+The file 'INSTALL.REPO' contains supplementary instructions for building
+directly from a clone of the Git repository.
+
+The file 'NEWS' contains a history of user-visible changes to 'groff'.
+
+'groff' is free software.  See the file 'COPYING' for copying
+permissions, and 'LICENSES' for further detail.
+
+The file 'PROBLEMS' describes various issues that users have encountered
+in compiling, installing, and running 'groff'.
+
+The file 'MORE.STUFF' describes some third-party programming and
+documentary resources useful with 'groff'.
+
+Current and historical releases of 'groff' are available via HTTPS and
+anonymous FTP from the host 'ftp.gnu.org' in the directory 'gnu/groff'.
+
+'groff' has a home page at the GNU Project.
+
+https://www.gnu.org/software/groff/
+
+Administration of the project is done through GNU Savannah.
+
+  https://savannah.gnu.org/git/?group=groff
+
+'groff' is developed at its Git repository, which has a web interface.
+
+  https://git.savannah.gnu.org/cgit/groff.git
+
+You can view any commit in isolation, and browse the entire source tree
+corresponding to its state as of that commit.  Click the summary line of
+the commit message to expose these options.
+
+Build requirements are discussed in the 'INSTALL.extra' and
+'INSTALL.REPO' files noted above.  'groff' also has runtime
+dependencies.
+
+Ghostscript is required for creation of PDF and (X)HTML output.
+Production of (X)HTML furthermore demands tools from the 'netpbm' and
+'psutils' packages.
+
+Perl is required for production of PDF output using the 'gropdf' output
+driver.  (You can alternatively produce PostScript with 'grops' and
+convert that to PDF using Ghostscipt.)  The 'chem', 'gperl', and
+'gpinyin' preprocessors and several utilities, such as 'grog', are also
+written in Perl.
+
+If 'groff' is configured with 'lp' or 'lpr' support, the corresponding
+program must remain available on the system for the 'groff' command's
+'-l' option to work.  Similarly, build-time detection of development
+headers for the 'uchardet', 'Xaw', and 'Xmu' libraries (and their
+dependencies) assumes that their runtime counterparts will remain
+installed to support the 'groff' that is built.
+
+You can view or add to to groff's bug database via its issue tracker on
+the Savannah site (also linked from the groff home page).
+
+  http://savannah.gnu.org/bugs/?group=groff
+
+To report a problem, you may use the form in the file 'BUG-REPORT'; its
+purpose is to make sure that FSF has all the information it needs to fix
+the bug.  At the very least, read the 'BUG-REPORT' form and make sure
+that you supply all the information that it asks for.  Even if you are
+not sure that something is a bug, please report it so we can determine
+whether it is a software defect, or an omission from our documentation.
+
+If you'd like to modify 'groff' or participate in its development, files
+'HACKING' and 'MANIFEST' will familiarize you with the structure of the
+code and the project's conventions for maintaining it.
+
+Three mailing lists are available.
+
+  bug-groff@gnu.org          a read-only list for following bug reports
+  groff@gnu.org              for general discussion of groff
+  groff-commit@gnu.org       a read-only list for following commits
+                             to the Git repository
+
+To subscribe, send a mail to <list>-request@<domain> (example:
+groff-request@gnu.org for the 'groff' list) with the word 'subscribe'
+in either the subject or body of the email (don't include the quotes).
+Alternatively, subscribe via our web pages by completing an HTML form.
+
+  https://lists.gnu.org/mailman/listinfo/bug-groff
+  https://lists.gnu.org/mailman/listinfo/groff
+  https://lists.gnu.org/mailman/listinfo/groff-commit
+
+Each of these web pages also provides a link to a browseable archive of
+postings to the corresponding mailing list.
+
+'groff' was primarily written by James Clark <jjc@jclark.com>.
+
+
+##### Editor settings
+Local Variables:
+fill-column: 72
+mode: text
+End:
+vim: set textwidth=72:
