@@ -3,12 +3,8 @@
     "tasks": [
       {
         "type": "shell",
-        "label": "Build hello_poly",
-        "command": "cmd.exe",
-        "args": [
-          "/c",
-          "\"${workspaceFolder}\\tools\\cygwin64\\bin\\sh.exe\" -c \"make -C '$(cygpath -m '${workspaceFolder}')'\""
-        ],
+        "label": "Build Project with make",
+        "command": "${workspaceFolder}\\tools\\GnuWin32\\bin\\make.exe",
         "problemMatcher": ["$gcc"],
         "group": {
           "kind": "build",
