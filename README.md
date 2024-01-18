@@ -52,4 +52,7 @@ You can read this list out of order, but I recommend you read it in order.
 1. Install the following extensions:
     - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
     - [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
-1. 
+1. Run `pscx-redux.exe` located in the `.tools\pscx-redux` folder. 
+    1. Ensure that the settings for running the gdb server are set correctly:
+1. Run `(gdb) Launch GDB (Redux)` in the Debug tab.
+ 
