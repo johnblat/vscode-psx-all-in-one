@@ -123,7 +123,7 @@ endif
 
 # A bit broken, but that'll do in most cases.
 %.dep: %.s
-	touch $@
+	tools/mips/mips/bin/touch.exe $@
 
 DEPS := $(patsubst %.cpp, %.dep,$(filter %.cpp,$(SRCS)))
 DEPS := $(patsubst %.cc,  %.dep,$(filter %.cc,$(SRCS)))
@@ -133,7 +133,7 @@ DEPS += $(patsubst %.s,   %.dep,$(filter %.s,$(SRCS)))
 dep: $(DEPS)
 
 clean:
-	rm -f $(OBJS) $(BINDIR)Overlay.* $(BINDIR)*.elf $(BINDIR)*.ps-exe $(BINDIR)*.map $(DEPS)
+	tools/mips/mips/bin/rm.exe -f $(OBJS) $(BINDIR)Overlay.* $(BINDIR)*.elf $(BINDIR)*.ps-exe $(BINDIR)*.map $(DEPS)
 
 ifneq ($(MAKECMDGOALS), clean)
 ifneq ($(MAKECMDGOALS), deepclean)

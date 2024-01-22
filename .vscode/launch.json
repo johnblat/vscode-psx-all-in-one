@@ -20,10 +20,9 @@
             "monitor reset shellhalt",
             "load ./main.elf",
             "tbreak main",
-            "continue",
         ],
         "valuesFormatting": "parseText",
-        "preLaunchTask": "Build hello_poly"
+        "preLaunchTask": "Build Project with make"
         }
     ]
 }
