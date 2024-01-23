@@ -4,3 +4,10 @@
 *.o
 *.ps-exe
 *.map
+
+**/*.dep
+**/*.elf
+**/*.map
+**/*.o
+**/*.ps-exe
+**/*.map

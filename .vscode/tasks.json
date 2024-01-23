@@ -15,7 +15,7 @@
       },
       {
         "type": "process",
-        "label": "Launch PSX-Redux 2",
+        "label": "Launch pscx-redux.exe",
         "command": "${workspaceFolder}/tools/pcsx-redux/pcsx-redux.exe",
         "problemMatcher": ["$gcc"],
         "group": {

@@ -20,11 +20,11 @@
     "BiosPath": "",
     "BnWMdec": false,
     "Debug": {
-      "Debug": false,
+      "Debug": true,
       "FirstChanceException": 7408,
       "GdbLog": 1,
       "GdbManifest": true,
-      "GdbServer": false,
+      "GdbServer": true,
       "GdbServerPort": 3333,
       "GdbServerTrace": false,
       "KernelCallA0_00_1f": 4294967295,
@@ -53,7 +53,7 @@
       "WebServerPort": 8080
     },
     "Dither": 1,
-    "Dynarec": true,
+    "Dynarec": false,
     "EXP1BrowsePath": "",
     "EXP1Filepath": "",
     "FastBoot": false,
@@ -152,7 +152,7 @@
     "WindowSizeX": 1280,
     "WindowSizeY": 800
   },
-  "imgui": "[Window][Debug##Default]\nPos=60,60\nSize=400,400\nCollapsed=0\n\n[Window][Update configuration]\nViewportPos=10,20\nViewportId=0x8C93FDF7\nSize=389,272\nCollapsed=0\n\n[Window][Update available]\nViewportPos=10,20\nViewportId=0x14E7B468\nSize=1024,160\nCollapsed=0\n\n[Docking][Data]\n\n",
+  "imgui": "[Window][Debug##Default]\nPos=60,60\nSize=400,400\nCollapsed=0\n\n[Window][Update configuration]\nViewportPos=10,20\nViewportId=0x8C93FDF7\nSize=389,272\nCollapsed=0\n\n[Window][Update available]\nViewportPos=10,20\nViewportId=0x14E7B468\nSize=1024,160\nCollapsed=0\n\n[Window][Emulation Configuration]\nViewportPos=50,30\nViewportId=0xA515CB4B\nSize=300,500\nCollapsed=0\n\n[Window][Notification]\nPos=503,352\nSize=275,96\nCollapsed=0\n\n[Docking][Data]\n\n",
   "loggers": {
     "CDROM": {
       "displayed": true,

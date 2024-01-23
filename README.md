@@ -3,14 +3,9 @@
 ## What is this?
 I created this git repo to help others get up and running with PSX development. It contains everything you need to get started, from the build tools to the PSX emulator itself. It also contains VS Code configuration to use the included tools.
 
-I wanted to create a repo where one could just clone a repository, press `F5` and have code build and running on an emulator. Then they might say, "huh..." or at least think, "hmm..." and then think "This ain't so bad to get started." 
+I wanted to create a repo where one could just clone a repository, press `F5` and have code build and running on an emulator. Then they might think "This ain't so bad to get started." 
 
 After that, maybe they can check out the code and start tinkering. 
-
-Maybe they'll look at the code, run it through a debugger and find out what every line is doing. 
-
-Maybe they'll check the psx development documentation and learn how to use the hardware.
-
 
 Maybe they'll even make a game. 
 
@@ -38,11 +33,6 @@ Now, I'm not saying that this repo will help you do all that. I'm just saying th
 
 I'm also not saying that this repo is the best way to get started. It probably isn't. I'm just saying that it's a way to get started.
 
-I'm not the world's best programmer, or the smartest guy... but I'm not the dumbest either, so there's something to be said about that, and I think I'm somewhere in between. If you think about it, that's not the worst position to be in. 
-
-In fact, being the world's smartest and brightest isn't all it's cracked up to be. You spend most of your time solving all the world's problems like hunger, war, and global warming, and you don't have time to enjoy the little things in life like a good cup of coffee, a nice sunset, or going a little over the speed limit. After all that, you die alone and miserable. And for what? So you can be remembered as the world's smartest and brightest? Who cares? You're dead.
-
-The world's dumbest and worst programmer is probably dead too - most likely from increasing their heart rate, or staring too long at the sun, or from dying in a terrifying car crash, or from being too happy. But at least they had a good time.
 
 ## Get Started
 
@@ -53,6 +43,25 @@ You can read this list out of order, but I recommend you read it in order.
     - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
     - [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
 1. Run `pscx-redux.exe` located in the `.tools\pscx-redux` folder. 
-    1. Ensure that the settings for running the gdb server are set correctly:
+    - Ensure that the settings for running the gdb server are set correctly:
+        - Dynarec turned off
+        - GDB Server and Debugging turned on
+    - Alternatively run the VS Code task `Launch pscx-redux.exe` which will do exactly what it says.
 1. Run `(gdb) Launch GDB (Redux)` in the Debug tab.
- 
+
+
+## What's Included
+- `.\tools\pscx-redux` - PSX Emulator
+    - Contains the pscx-redux emulator 
+- `.\tools\gdb-multiarch-12.1` - GDB Debugger
+    - Contains a gdb client that can connect to the pscx-redux emulator gdb server
+- `.\tools\GnuWin32\bin\make.exe` - Make
+    - Contains a Windows make port that can be used to build the code with the Makefile provided
+- `.\tools\mips` - Contains the mips compiler
+    - Used to compile the project for targeting PSX
+- `.\vscode`
+    - contains launch and task configurations for VS Code on Windows
+
+## Debugging Bugginess
+- If you remove all breakpoints while running the code, and then add a breakpoint, the code will not stop at the breakpoint. 
+    - You must pause the debugger and then add a breakpoint. Then you can continue debugging.
