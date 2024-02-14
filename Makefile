@@ -1,7 +1,7 @@
 TARGET = main
 TYPE = ps-exe
 
-SRCS = main.c 
+SRCS = src/main.c 
 
 LDFLAGS += -Wl,--start-group
 LDFLAGS += -lapi
