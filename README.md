@@ -1,5 +1,7 @@
 # PSX Self-Contained Development Environment for VS Code on Windows
 
+maybe one day for linux too but one egg at a time
+
 ## What is this?
 I created this git repo to help others get up and running with PSX development. It contains everything you need to get started, from the build tools to the PSX emulator itself. It also contains VS Code configuration to use the included tools.
 
@@ -61,6 +63,10 @@ You can read this list out of order, but I recommend you read it in order.
     - Used to compile the project for targeting PSX
 - `.\vscode`
     - contains launch and task configurations for VS Code on Windows
+- `.\docs\LIBOVR64.pdf` - PSX Overview and Conceptual Documentation
+    - Contains the PSX documentation for the PSX hardware and things like how the PSX processes graphics
+- `.\docs\LIBREF64.pdf` - PSX Reference Manual
+    - Contains the PSX reference for C structs and functions for working with PsyQ
 
 ## Debugging Bugginess
 - If you remove all breakpoints while running the code, and then add a breakpoint, the code will not stop at the breakpoint. 
