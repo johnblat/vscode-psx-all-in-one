@@ -25,6 +25,26 @@ u_long ot[2][OTLEN];               // double ordering table of length 8 * 32 = 2
 char primbuff[2][32768];     // double primitive buffer of length 32768 * 8 =  262.144 bits / 32,768 Kbytes
 char *nextpri = primbuff[0];       // pointer to the next primitive in primbuff. Initially, points to the first bit of primbuff[0]
 short db = 0;                      // index of which buffer is used, values 0, 1
+
+extern ulong _binary_assets_tim_tex64_tim_start[];
+extern ulong _binary_assets_tim_tex64_tim_end[];
+extern ulong _binary_assets_tim_tex64_tim_length;
+TIM_IMAGE tex64;
+
+void LoadTexture(u_long *tim, TIM_IMAGE *tparam)
+{
+    OpenTIM(tim);
+    ReadTIM(tparam);
+    LoadImage(tparam->prect, tparam->paddr);
+    DrawSync(0);
+    if(tparam->mode & 0x8)
+    {
+        LoadImage(tparam->crect, tparam->caddr);
+        DrawSync(0);
+    }
+
+}
+
 void init(void)
 {
     ResetGraph(0);
@@ -62,6 +82,11 @@ void display(void)
 }
 int main(void)
 {
+    // sprite stuff
+    SPRT *sprt_tex64;
+    DR_TPAGE *tpage_tex64;
+
+    // rotating rectangle stuff
     SVECTOR RotVector = {0, 0, 0};                  // Initialize rotation vector {x, y, z}
     VECTOR  MovVector = {0, 0, CENTERX, 0};         // Initialize translation vector {x, y, z}
     VECTOR  ScaleVector ={ONE, ONE, ONE};           // ONE is define as 4096 in libgte.h
@@ -78,6 +103,9 @@ int main(void)
     long polyflag;
     long OTz;
     init();
+
+    // sprite stuff
+    LoadTexture(_binary_assets_tim_tex64_tim_start, &tex64);
     while (1)
     {
         ClearOTagR(ot[db], OTLEN);
@@ -108,6 +136,21 @@ int main(void)
         nextpri += sizeof(POLY_F4);                    // increment nextpri address with size of a POLY_F4 struct 
         FntPrint("Hello Poly !");                   
         FntFlush(-1);
+
+        //spriter stuff
+        sprt_tex64 = (SPRT *)nextpri;
+        setSprt(sprt_tex64);
+        setRGB0(sprt_tex64, 128, 128, 128);
+        setXY0(sprt_tex64, 0, 0);
+        setWH(sprt_tex64, 64, 64);
+        addPrim(ot[db], sprt_tex64);
+        nextpri += sizeof(SPRT);
+        tpage_tex64 = (DR_TPAGE *)nextpri;
+        setDrawTPage(tpage_tex64, 0, 1, 
+            getTPage(tex64.mode&0x3, 0, tex64.prect->x, tex64.prect->y)
+        );
+        addPrim(ot[db], tpage_tex64);
+        nextpri += sizeof(DR_TPAGE);
         display();
         }
     return 0;

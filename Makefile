@@ -1,7 +1,7 @@
 TARGET = main
 TYPE = ps-exe
 
-SRCS = src/main.c 
+SRCS = src/main.c assets/tim/tex64.tim
 
 LDFLAGS += -Wl,--start-group
 LDFLAGS += -lapi
@@ -109,8 +109,17 @@ ifneq ($(strip $(BINDIR)),)
 endif
 	$(CC) -g -o $(BINDIR)$(TARGET).elf $(OBJS) $(LDFLAGS)
 
+define OBJCOPYME
+$(PREFIX)-objcopy -I binary --set-section-alignment .data=4 --rename-section .data=.rodata,alloc,load,readonly,data,contents -O $(FORMAT) -B mips $< $@
+endef
+
+
 %.o: %.s
 	$(CC) $(ARCHFLAGS) -I$(THISDIR)thirdparty/nugget -g -c -o $@ $<
+
+# convert TIM file to bin
+%.o: %.tim
+	$(call OBJCOPYME)
 
 %.dep: %.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -M -MT $(addsuffix .o, $(basename $@)) -MF $@ $<
