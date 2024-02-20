@@ -119,7 +119,7 @@ endef
 
 # convert TIM file to bin
 %.o: %.tim
-	$(call OBJCOPYME)
+	$(call OBJCOPYME) 
 
 %.dep: %.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -M -MT $(addsuffix .o, $(basename $@)) -MF $@ $<
