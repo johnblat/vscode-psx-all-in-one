@@ -168,6 +168,6 @@ int main(void)
         addPrim(ot[db], tpage_tex64);
         nextpri += sizeof(DR_TPAGE);
         display();
-        }
+    }
     return 0;
 }
