@@ -28,7 +28,7 @@ LDFLAGS += -lspu
 LDFLAGS += -ltap
 LDFLAGS += -Wl,--end-group
 
-BUILD ?= Release
+BUILD ?= Debug
 
 HAS_LINUX_MIPS_GCC = $(shell which mipsel-linux-gnu-gcc > /dev/null 2> /dev/null && echo true || echo false)
 
@@ -71,8 +71,8 @@ LDFLAGS += $(ARCHFLAGS) -Wl,--oformat=$(FORMAT)
 CPPFLAGS_Release += -Os
 LDFLAGS_Release += -Os
 
-CPPFLAGS_Debug += -Og
-CPPFLAGS_Coverage += -Og
+CPPFLAGS_Debug += -O0
+CPPFLAGS_Coverage += -O0
 
 LDFLAGS += -g
 CPPFLAGS += -g
