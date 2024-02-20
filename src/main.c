@@ -26,6 +26,8 @@ char primbuff[2][32768];     // double primitive buffer of length 32768 * 8 =  2
 char *nextpri = primbuff[0];       // pointer to the next primitive in primbuff. Initially, points to the first bit of primbuff[0]
 short db = 0;                      // index of which buffer is used, values 0, 1
 
+#define CLUT_MASK 0x8
+
 extern ulong _binary_assets_tim_tex64_tim_start[];
 extern ulong _binary_assets_tim_tex64_tim_end[];
 extern ulong _binary_assets_tim_tex64_tim_size[];
@@ -50,7 +52,7 @@ void LoadTexture(ulong *tim_addr, TIM_IMAGE *tparam)
         int x = 0;
     }
     DrawSync(0);
-    if(tparam->mode & 0x8)
+    if(tparam->mode & CLUT_MASK)
     {
         LoadImage(tparam->crect, tparam->caddr);
         DrawSync(0);
@@ -154,6 +156,7 @@ int main(void)
         sprt_tex64 = (SPRT *)nextpri;
         setSprt(sprt_tex64);
         setRGB0(sprt_tex64, 128, 128, 128);
+        setClut(sprt_tex64, tex64.crect->x, tex64.crect->y);
         setXY0(sprt_tex64, 0, 0);
         setWH(sprt_tex64, 64, 64);
         addPrim(ot[db], sprt_tex64);
