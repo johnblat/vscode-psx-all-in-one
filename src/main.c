@@ -10,6 +10,12 @@
 #include <libetc.h>
 #include <libgpu.h>
 #include <libapi.h>
+#include <malloc.h>
+#include "../thirdparty/nugget/common/kernel/pcdrv.h"
+
+int	_SN_read(int fd, char *buff, int len);
+int	_SN_write(int fd, char *buff, int len);
+
 #define VMODE 0                 // Video Mode : 0 : NTSC, 1: PAL
 #define SCREENXRES 320          // Screen width
 #define SCREENYRES 240          // Screen height
@@ -26,11 +32,26 @@ char primbuff[2][32768];     // double primitive buffer of length 32768 * 8 =  2
 char *nextpri = primbuff[0];       // pointer to the next primitive in primbuff. Initially, points to the first bit of primbuff[0]
 short db = 0;                      // index of which buffer is used, values 0, 1
 
+// CD Stuff //
+// static unsigned char ramAddr[0x40000]; 
+// u_long * dataBuffer;          
+// // Those are not strictly needed, but we'll use them to see the commands results.
+// // They could be replaced by a 0 in the various functions they're used with.
+// u_char CtrlResult[8];
+// // Value returned by CDread() - 1 is good, 0 is bad
+// int CDreadOK = 0;
+// // Value returned by CDsync() - Returns remaining sectors to load. 0 is good.
+// int CDreadResult = 0;
+
+// Texture stuff if loaded as object file in .rodata
 #define CLUT_MASK 0x8
 
 extern ulong _binary_assets_tim_tex64_tim_start[];
 extern ulong _binary_assets_tim_tex64_tim_end[];
 extern ulong _binary_assets_tim_tex64_tim_size[];
+
+char buffer[8192]; // 8 kilobytes of buffer
+
 TIM_IMAGE tex64;
 
 void LoadTexture(ulong *tim_addr, TIM_IMAGE *tparam)
@@ -40,10 +61,10 @@ void LoadTexture(ulong *tim_addr, TIM_IMAGE *tparam)
     {
         int x = 0;
     }
-    ulong size = (ulong) _binary_assets_tim_tex64_tim_size;
-    ulong *start = _binary_assets_tim_tex64_tim_start;
-    ulong *end = _binary_assets_tim_tex64_tim_end;
-    ulong calc_size = (ulong) end -  (ulong) start;
+    // ulong size = (ulong) _binary_assets_tim_tex64_tim_size;
+    // ulong *start = _binary_assets_tim_tex64_tim_start;
+    // ulong *end = _binary_assets_tim_tex64_tim_end;
+    // ulong calc_size = (ulong) end -  (ulong) start;
 
     ReadTIM(tparam);
     error = LoadImage(tparam->prect, tparam->paddr);
@@ -59,6 +80,33 @@ void LoadTexture(ulong *tim_addr, TIM_IMAGE *tparam)
     }
 
 }
+
+// CD specifics
+// #define CD_SECTOR_SIZE 2048
+// // Converting bytes to sectors SECTOR_SIZE is defined in words, aka int
+// #define BtoS(len) ( ( len + CD_SECTOR_SIZE - 1 ) / CD_SECTOR_SIZE ) 
+// // libcd's CD file structure contains size, location and filename
+// CdlFILE filePos = {0};
+
+// void LoadTextureFromCd(ulong *tim_addr, TIM_IMAGE *tparam)
+// {
+//     // Value returned by CDread() - 1 is good, 0 is bad
+//     int CDreadOK = 0;
+//     // Value returned by CDsync() - Returns remaining sectors to load. 0 is good.
+//     int CDreadResult = 0;
+
+//     static char *loadFile = "\\tim\\tex64.tim;1";
+//     CdSearchFile(&filePos, loadFile);
+//     dataBuffer = malloc( BtoS( filePos.size ) * CD_SECTOR_SIZE );
+
+//     CdControl(CdlSetloc, (u_char *)&filePos.pos, CtrlResult);
+
+//     CDreadOK = CdRead( (int)BtoS( filePos.size ), (u_long *)dataBuffer, CdlModeSpeed);
+
+//     CDreadResult = CdReadSync(0, 0);
+
+//     int x = 0;
+// }
 
 void init(void)
 {
@@ -84,6 +132,37 @@ void init(void)
     PutDrawEnv(&draw[db]);
     FntLoad(960, 0);
     FntOpen(MARGINX, SCREENYRES - MARGINY - FONTSIZE, SCREENXRES - MARGINX * 2, FONTSIZE, 0, 280 );
+
+    // int err = CdInit();
+    // if(err)
+    // {
+    //     int x = 0;
+    // }
+
+    //InitHeap((u_long *)ramAddr, sizeof(ramAddr));
+
+
+    int err = PCinit();
+    if(err)
+    {
+        int x = 0;
+    }
+    int fd = PCopen("tim/tex64.tim", 0, 0);
+    if(err)
+    {
+        int x = 0;
+    }
+    int size = PClseek(fd, 0, 2);
+    PClseek(fd, 0, 0);
+    int bytes_read = PCread(fd, buffer, size);
+    if(bytes_read < 0)
+    {
+        //pollhost();
+        int x = 0;
+    }
+
+    LoadTexture((ulong *) buffer, &tex64);
+    //LoadTextureFromCd((ulong *) buffer, &tex64);
 }
 void display(void)
 {
@@ -104,7 +183,7 @@ int main(void)
     // rotating rectangle stuff
     SVECTOR RotVector = {0, 0, 0};                  // Initialize rotation vector {x, y, z}
     VECTOR  MovVector = {0, 0, CENTERX, 0};         // Initialize translation vector {x, y, z}
-    VECTOR  ScaleVector ={ONE, ONE, ONE};           // ONE is define as 4096 in libgte.h
+    VECTOR  ScaleVector = {ONE, ONE, ONE};           // ONE is define as 4096 in libgte.h
     SVECTOR VertPos[4] = {                          // Set initial vertices position relative to 0,0 - see here : https://psx.arthus.net/docs/poly_f4.jpg
             {-32, -32, 1 },                         // Vert 1 
             {-32,  32, 1 },                         // Vert 2
@@ -120,7 +199,7 @@ int main(void)
     init();
 
     // sprite stuff
-    LoadTexture(_binary_assets_tim_tex64_tim_start, &tex64);
+   // LoadTexture(_binary_assets_tim_tex64_tim_start, &tex64);
     while (1)
     {
         ClearOTagR(ot[db], OTLEN);
