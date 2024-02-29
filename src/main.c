@@ -46,67 +46,60 @@ short db = 0;                      // index of which buffer is used, values 0, 1
 // Texture stuff if loaded as object file in .rodata
 #define CLUT_MASK 0x8
 
-extern ulong _binary_assets_tim_tex64_tim_start[];
-extern ulong _binary_assets_tim_tex64_tim_end[];
-extern ulong _binary_assets_tim_tex64_tim_size[];
-
 char buffer[8192]; // 8 kilobytes of buffer
 
 TIM_IMAGE tex64;
 
-void LoadTexture(ulong *tim_addr, TIM_IMAGE *tparam)
+void LoadTexture(ulong *tim_addr, TIM_IMAGE *tim_image)
 {
     int error = OpenTIM(tim_addr);
     if(error)
     {
-        int x = 0;
+        printf("Error opening TIM file\n");
     }
     // ulong size = (ulong) _binary_assets_tim_tex64_tim_size;
     // ulong *start = _binary_assets_tim_tex64_tim_start;
     // ulong *end = _binary_assets_tim_tex64_tim_end;
     // ulong calc_size = (ulong) end -  (ulong) start;
 
-    ReadTIM(tparam);
-    error = LoadImage(tparam->prect, tparam->paddr);
+    ReadTIM(tim_image);
+    error = LoadImage(tim_image->prect, tim_image->paddr);
     if(error)
     {
-        int x = 0;
+        printf("Error loading image from tim image of file\n");
     }
     DrawSync(0);
-    if(tparam->mode & CLUT_MASK)
+    if(tim_image->mode & CLUT_MASK)
     {
-        LoadImage(tparam->crect, tparam->caddr);
+        LoadImage(tim_image->crect, tim_image->caddr);
         DrawSync(0);
     }
 
 }
 
-// CD specifics
-// #define CD_SECTOR_SIZE 2048
-// // Converting bytes to sectors SECTOR_SIZE is defined in words, aka int
-// #define BtoS(len) ( ( len + CD_SECTOR_SIZE - 1 ) / CD_SECTOR_SIZE ) 
-// // libcd's CD file structure contains size, location and filename
-// CdlFILE filePos = {0};
+void LoadTexturePC(char *filename, TIM_IMAGE *tim_image)
+{
+    int err = PCinit();
+    if(err)
+    {
+        int x = 0;
+    }
+    int fd = PCopen("tim/tex64.tim", 0, 0);
+    if(err)
+    {
+        int x = 0;
+    }
+    int size = PClseek(fd, 0, 2);
+    PClseek(fd, 0, 0);
+    int bytes_read = PCread(fd, buffer, size);
+    if(bytes_read < 0)
+    {
+        //pollhost();
+        int x = 0;
+    }
 
-// void LoadTextureFromCd(ulong *tim_addr, TIM_IMAGE *tparam)
-// {
-//     // Value returned by CDread() - 1 is good, 0 is bad
-//     int CDreadOK = 0;
-//     // Value returned by CDsync() - Returns remaining sectors to load. 0 is good.
-//     int CDreadResult = 0;
-
-//     static char *loadFile = "\\tim\\tex64.tim;1";
-//     CdSearchFile(&filePos, loadFile);
-//     dataBuffer = malloc( BtoS( filePos.size ) * CD_SECTOR_SIZE );
-
-//     CdControl(CdlSetloc, (u_char *)&filePos.pos, CtrlResult);
-
-//     CDreadOK = CdRead( (int)BtoS( filePos.size ), (u_long *)dataBuffer, CdlModeSpeed);
-
-//     CDreadResult = CdReadSync(0, 0);
-
-//     int x = 0;
-// }
+    LoadTexture((ulong *) buffer, &tex64);
+}
 
 void init(void)
 {
@@ -133,37 +126,11 @@ void init(void)
     FntLoad(960, 0);
     FntOpen(MARGINX, SCREENYRES - MARGINY - FONTSIZE, SCREENXRES - MARGINX * 2, FONTSIZE, 0, 280 );
 
-    // int err = CdInit();
-    // if(err)
-    // {
-    //     int x = 0;
-    // }
 
-    //InitHeap((u_long *)ramAddr, sizeof(ramAddr));
+    LoadTexturePC("tim/tex64.tim", &tex64);
 
-
-    int err = PCinit();
-    if(err)
-    {
-        int x = 0;
-    }
-    int fd = PCopen("tim/tex64.tim", 0, 0);
-    if(err)
-    {
-        int x = 0;
-    }
-    int size = PClseek(fd, 0, 2);
-    PClseek(fd, 0, 0);
-    int bytes_read = PCread(fd, buffer, size);
-    if(bytes_read < 0)
-    {
-        //pollhost();
-        int x = 0;
-    }
-
-    LoadTexture((ulong *) buffer, &tex64);
-    //LoadTextureFromCd((ulong *) buffer, &tex64);
 }
+
 void display(void)
 {
     DrawSync(0);
