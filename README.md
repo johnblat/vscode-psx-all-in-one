@@ -33,7 +33,7 @@ So yeah, that's what this is.
 
 Now, I'm not saying that this repo will help you do all that. I'm just saying that it might.
 
-I'm also not saying that this repo is the best way to get started. It probably isn't. I'm just saying that it's a way to get started.
+I'm also not saying that this repo is the best way to get started. It probably isn't. I'm just saying that it's _a way_ to get started.
 
 
 ## Get Started
@@ -44,11 +44,10 @@ You can read this list out of order, but I recommend you read it in order.
 1. Install the following extensions:
     - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
     - [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
-1. Run `pscx-redux.exe` located in the `.tools\pscx-redux` folder. 
+1. Run `pscx-redux.exe` located in the `.tools\pscx-redux` folder. Alternatively run the VS Code task `Launch pscx-redux.exe` which will do exactly what it says.
     - Ensure that the settings for running the gdb server are set correctly:
         - Dynarec turned off
         - GDB Server and Debugging turned on
-    - Alternatively run the VS Code task `Launch pscx-redux.exe` which will do exactly what it says.
 1. Run `(gdb) Launch GDB (Redux)` in the Debug tab.
 
 
