@@ -1,9 +1,4 @@
-// Draw a colored poly primitive
-//
-// With help from Nicolas Noble, Jaby smoll Seamonstah, Lameguy64
-// 
-// From ../psyq/addons/graphics/MESH/RMESH/TUTO0.C :
-// Schnappy 2021
+
 #include <sys/types.h>
 #include <stdio.h>
 #include <libgte.h>
@@ -11,10 +6,8 @@
 #include <libgpu.h>
 #include <libapi.h>
 #include <malloc.h>
+#include <libcd.h>
 #include "../thirdparty/nugget/common/kernel/pcdrv.h"
-
-int	_SN_read(int fd, char *buff, int len);
-int	_SN_write(int fd, char *buff, int len);
 
 #define VMODE 0                 // Video Mode : 0 : NTSC, 1: PAL
 #define SCREENXRES 320          // Screen width
@@ -32,23 +25,28 @@ char primbuff[2][32768];     // double primitive buffer of length 32768 * 8 =  2
 char *nextpri = primbuff[0];       // pointer to the next primitive in primbuff. Initially, points to the first bit of primbuff[0]
 short db = 0;                      // index of which buffer is used, values 0, 1
 
-// CD Stuff //
-// static unsigned char ramAddr[0x40000]; 
-// u_long * dataBuffer;          
-// // Those are not strictly needed, but we'll use them to see the commands results.
-// // They could be replaced by a 0 in the various functions they're used with.
-// u_char CtrlResult[8];
-// // Value returned by CDread() - 1 is good, 0 is bad
-// int CDreadOK = 0;
-// // Value returned by CDsync() - Returns remaining sectors to load. 0 is good.
-// int CDreadResult = 0;
 
-// Texture stuff if loaded as object file in .rodata
+// For CD Access
+static unsigned char ramAddr[0x40000]; // 256KB buffer 
+
+// TIM files will get objcopyed into the .rodata section of the ELF file
+// objcopy generates these symobls automatically
+// extern means that the symbols are defined elsewhere
+
+extern ulong _binary_assets_tim_tex64_tim_start[];
+extern ulong _binary_assets_tim_tex64_tim_end[];
+extern ulong _binary_assets_tim_tex64_tim_size[];
+
+
+
 #define CLUT_MASK 0x8
 
-char buffer[8192]; // 8 kilobytes of buffer
+// General 8KB Buffer
+char buffer[8192]; 
 
+// Where the TIM texture will be loaded
 TIM_IMAGE tex64;
+
 
 void LoadTexture(ulong *tim_addr, TIM_IMAGE *tim_image)
 {
@@ -57,10 +55,6 @@ void LoadTexture(ulong *tim_addr, TIM_IMAGE *tim_image)
     {
         printf("Error opening TIM file\n");
     }
-    // ulong size = (ulong) _binary_assets_tim_tex64_tim_size;
-    // ulong *start = _binary_assets_tim_tex64_tim_start;
-    // ulong *end = _binary_assets_tim_tex64_tim_end;
-    // ulong calc_size = (ulong) end -  (ulong) start;
 
     ReadTIM(tim_image);
     error = LoadImage(tim_image->prect, tim_image->paddr);
@@ -77,29 +71,49 @@ void LoadTexture(ulong *tim_addr, TIM_IMAGE *tim_image)
 
 }
 
-void LoadTexturePC(char *filename, TIM_IMAGE *tim_image)
+// Loading texture functions
+
+void LoadTextureFromPCFileServer(char *filename, TIM_IMAGE *tim_image)
 {
-    int err = PCinit();
-    if(err)
-    {
-        int x = 0;
-    }
+    int err;
+
     int fd = PCopen("tim/tex64.tim", 0, 0);
     if(err)
     {
-        int x = 0;
+        printf("Error opening file\n");
     }
     int size = PClseek(fd, 0, 2);
     PClseek(fd, 0, 0);
     int bytes_read = PCread(fd, buffer, size);
     if(bytes_read < 0)
     {
-        //pollhost();
-        int x = 0;
+        printf("Error reading file\n");
     }
 
     LoadTexture((ulong *) buffer, &tex64);
 }
+
+void LoadTextureFromMemory(u_long *tim_addr, TIM_IMAGE *tim_image)
+{
+    LoadTexture(tim_addr, tim_image);
+}
+
+
+void LoadTextureFromCD(char *filename, TIM_IMAGE *tim_image)
+{
+    // CD Stuff //
+
+    u_long * dataBuffer;          
+    // Those are not strictly needed, but we'll use them to see the commands results.
+    // They could be replaced by a 0 in the various functions they're used with.
+    u_char CtrlResult[8];
+    // Value returned by CDread() - 1 is good, 0 is bad
+    int CDreadOK = 0;
+    // Value returned by CDsync() - Returns remaining sectors to load. 0 is good.
+    int CDreadResult = 0;
+}
+
+// Initialization
 
 void init(void)
 {
@@ -126,10 +140,19 @@ void init(void)
     FntLoad(960, 0);
     FntOpen(MARGINX, SCREENYRES - MARGINY - FONTSIZE, SCREENXRES - MARGINX * 2, FONTSIZE, 0, 280 );
 
+    int err = PCinit();
+    if(err)
+    {
+        printf("Error initializing PC Fileserver\n");
+    }
 
-    LoadTexturePC("tim/tex64.tim", &tex64);
+    // LoadTextureFromMemory(_binary_assets_tim_tex64_tim_start, &tex64);
+    // LoadTextureFromCD("tim/tex64.tim", &tex64);
+    LoadTextureFromPCFileServer("tim/tex64.tim", &tex64);
 
 }
+
+// Display
 
 void display(void)
 {
@@ -141,6 +164,9 @@ void display(void)
     db = !db;
     nextpri = primbuff[db];
 }
+
+// Main
+
 int main(void)
 {
     // sprite stuff
