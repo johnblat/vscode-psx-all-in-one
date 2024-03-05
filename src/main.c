@@ -147,8 +147,11 @@ void init(void)
     }
 
     // LoadTextureFromMemory(_binary_assets_tim_tex64_tim_start, &tex64);
-    // LoadTextureFromCD("tim/tex64.tim", &tex64);
+#ifdef CD_ROM_BUILD
+    LoadTextureFromCD("tim/tex64.tim", &tex64);
+#else 
     LoadTextureFromPCFileServer("tim/tex64.tim", &tex64);
+#endif
 
 }
 

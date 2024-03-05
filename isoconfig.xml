@@ -13,7 +13,7 @@
         cue_sheet   - Optional, file name of the cue sheet for the image file
                       (required if more than one track is specified).
 -->
-<iso_project image_name="hello_cd.bin" cue_sheet="hello_cd.cue">
+<iso_project image_name="main.bin" cue_sheet="main.cue">
 
     <!-- <track>
             Specifies a track to the ISO project. This example element creates a data
@@ -85,8 +85,8 @@
             -->
             <!-- Stores system.txt as system.cnf -->
             <file name="system.cnf" type="data" source="system.cnf"/>
-            <file name="SCES_313.37"   type="data" source="hello_cd.ps-exe"/>
-            <file name="HELO.DAT"   type="data" source="HELO.DAT"/>
+            <file name="SCES_313.37"   type="data" source="main.ps-exe"/>
+            <file name="tex64.tim"   type="data" source="assets/tim/tex64.tim"/>
             <dummy sectors="1024"/>
             
             <!-- <dir>
