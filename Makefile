@@ -141,9 +141,11 @@ DEPS += $(patsubst %.s,   %.dep,$(filter %.s,$(SRCS)))
 
 dep: $(DEPS)
 
-all:
+cd_rom:
 	CPPFLAGS += -DCD_ROM_BUILD
 	tools\mkpsxiso-2.04-win64\bin\mkpsxiso.exe isoconfig.xml
+
+
 
 clean:
 	tools/mips/mips/bin/rm.exe -f $(OBJS) $(BINDIR)Overlay.* $(BINDIR)*.elf $(BINDIR)*.ps-exe $(BINDIR)*.map $(DEPS)
