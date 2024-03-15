@@ -38,8 +38,6 @@ I'm also not saying that this repo is the best way to get started. It probably i
 
 ## Get Started
 
-You can read this list out of order, but I recommend you read it in order.
-
 1. Install [VS Code](https://code.visualstudio.com/) if you don't have it installed on your comptuer already. If you do skip to step 2. 
 1. Install the following extensions:
     - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
