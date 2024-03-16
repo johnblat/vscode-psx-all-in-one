@@ -141,9 +141,10 @@ DEPS += $(patsubst %.s,   %.dep,$(filter %.s,$(SRCS)))
 
 dep: $(DEPS)
 
-cd_rom:
-	CPPFLAGS += -DCD_ROM_BUILD
-	tools\mkpsxiso-2.04-win64\bin\mkpsxiso.exe isoconfig.xml
+cd_rom: CPPFLAGS += -DCD_ROM_BUILD
+cd_rom: all $(BINDIR)$(TARGET).$(TYPE)
+	@echo "Building CD-ROM "
+	tools/mkpsxiso-2.04-win64/bin/mkpsxiso.exe -y isoconfig.xml
 
 
 
@@ -158,4 +159,4 @@ ifneq ($(MAKECMDGOALS), deepclean)
 endif
 endif
 
-.PHONY: clean dep all
+.PHONY: clean dep all cd_rom

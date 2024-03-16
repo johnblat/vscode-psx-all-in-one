@@ -23,6 +23,6 @@
         ],
         "valuesFormatting": "parseText",
         "preLaunchTask": "Build Project with make"
-        }
+        },
     ]
 }

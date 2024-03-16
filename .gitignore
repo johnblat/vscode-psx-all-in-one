@@ -11,3 +11,13 @@
 **/*.o
 **/*.ps-exe
 **/*.map
+
+# iso building
+**/*.iso
+**/*.bin 
+**/*.cue
+**/*.37 
+license_data.dat
+
+# no licenses in code pls
+LCNSFILE

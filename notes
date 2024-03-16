@@ -1,4 +1,0 @@
-if your goal of simulating cd-rom access is to exercise the codepath, then yes, you'd need to re-create an iso every time, but then in general, streaming data through the hardware sio is an operation generally known as "pcdrv", which Redux supports natively
-typically, if you go down this route, the workflow is to have some way of switching between the codepaths of either going through the cd-rom, or through pcdrv
-Redux when run with the vscode extension will map local project files to pcdrv, or you can use the command line to achieve the same
-and on real hardware, when using unirom + nops in debug mode, the same will happen: nops will map local files to pcdrv

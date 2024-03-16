@@ -62,9 +62,9 @@
             Attributes:
                 file    - Specifies the license file to inject into the ISO image.
         -->
-        <!--
-        <license file="LICENSEA.DAT"/>
-        -->
+        
+        <license file="LCNSFILE/LICENSEA.DAT"/>
+       
         
         <!-- <directory_tree>
                 Specifies and contains the directory structure for the data track.
@@ -86,7 +86,7 @@
             <!-- Stores system.txt as system.cnf -->
             <file name="system.cnf" type="data" source="system.cnf"/>
             <file name="SCES_313.37"   type="data" source="main.ps-exe"/>
-            <file name="tex64.tim"   type="data" source="assets/tim/tex64.tim"/>
+            <!-- <file name="tex64.tim"   type="data" source="assets/tim/tex64.tim"/> -->
             <dummy sectors="1024"/>
             
             <!-- <dir>
