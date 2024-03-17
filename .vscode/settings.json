@@ -2,6 +2,9 @@
     "files.associations": {
         "*.gtpl": "html",
         "erb": "html",
-        "types.h": "c"
+        "types.h": "c",
+        "pcdrv.h": "c",
+        "libcd.h": "c",
+        "strings.h": "c"
     }
 }

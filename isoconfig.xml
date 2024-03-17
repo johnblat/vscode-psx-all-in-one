@@ -13,7 +13,7 @@
         cue_sheet   - Optional, file name of the cue sheet for the image file
                       (required if more than one track is specified).
 -->
-<iso_project image_name="main.bin" cue_sheet="main.cue">
+<iso_project image_name="test.bin" cue_sheet="test.cue">
 
     <!-- <track>
             Specifies a track to the ISO project. This example element creates a data
@@ -46,9 +46,9 @@
         <identifiers
             system          ="PLAYSTATION"
             application     ="PLAYSTATION"
-            volume          ="HELOCD"
-            volume_set      ="HELOCD"
-            publisher       ="SCHNAPPY"
+            volume          ="TEST"
+            volume_set      ="TEST"
+            publisher       ="FROGBASTARD"
             data_preparer       ="MKPSXISO"
         />
         
@@ -86,7 +86,11 @@
             <!-- Stores system.txt as system.cnf -->
             <file name="system.cnf" type="data" source="system.cnf"/>
             <file name="SCES_313.37"   type="data" source="main.ps-exe"/>
-            <!-- <file name="tex64.tim"   type="data" source="assets/tim/tex64.tim"/> -->
+            <file name="TEST.DAT" type="data" source="assets/test.dat"/>
+            <dir name ="tim">
+                <file name="tex64.tim"   type="data" source="assets/tim/tex64.tim"/>
+            </dir> 
+            
             <dummy sectors="1024"/>
             
             <!-- <dir>

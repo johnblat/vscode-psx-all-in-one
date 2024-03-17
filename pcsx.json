@@ -56,7 +56,7 @@
     "Dynarec": false,
     "EXP1BrowsePath": "",
     "EXP1Filepath": "",
-    "FastBoot": false,
+    "FastBoot": true,
     "FullCaching": false,
     "GUITheme": 3,
     "HardwareRenderer": false,
@@ -147,12 +147,12 @@
     "ShowVRAMViewer4": false,
     "VRAMEditorAddr": 0,
     "WidescreenRatio": false,
-    "WindowPosX": 946,
-    "WindowPosY": 147,
+    "WindowPosX": -1458,
+    "WindowPosY": 112,
     "WindowSizeX": 1280,
-    "WindowSizeY": 800
+    "WindowSizeY": 794
   },
-  "imgui": "[Window][Debug##Default]\nPos=60,60\nSize=400,400\nCollapsed=0\n\n[Window][Update configuration]\nViewportPos=10,20\nViewportId=0x8C93FDF7\nSize=389,272\nCollapsed=0\n\n[Window][Update available]\nViewportPos=10,20\nViewportId=0x14E7B468\nSize=292,160\nCollapsed=0\n\n[Window][Emulation Configuration]\nViewportPos=913,213\nViewportId=0xA515CB4B\nSize=749,552\nCollapsed=0\n\n[Window][Notification]\nPos=503,352\nSize=304,96\nCollapsed=0\n\n[Window][###Open Binary]\nViewportPos=3,3\nViewportId=0xDEFA6028\nSize=830,789\nCollapsed=0\n\n[Window][###Open Archive]\nPos=2828,464\nSize=600,400\nCollapsed=0\n\n[Window][UI Configuration]\nViewportPos=10,20\nViewportId=0x36BEE24D\nSize=1024,512\nCollapsed=0\n\n[Window][Logs]\nViewportPos=15,118\nViewportId=0x50BD6962\nSize=928,901\nCollapsed=0\n\n[Window][###Open Disk Image]\nPos=340,200\nSize=600,400\nCollapsed=0\n\n[Table][0xF043A2BA,3]\nRefScale=16\nColumn 0  Sort=0v\n\n[Table][0xE2A30D4B,2]\nRefScale=16\nColumn 0  Width=125\nColumn 1  Weight=1.0000\n\n[Table][0x765EF860,3]\nRefScale=16\nColumn 0  Sort=0v\n\n[Table][0x5B1C2532,2]\nRefScale=16\nColumn 0  Width=125\nColumn 1  Weight=1.0000\n\n[Table][0xE5208AD0,3]\nRefScale=16\nColumn 0  Sort=0v\n\n[Table][0x6CEA18CB,2]\nRefScale=16\nColumn 0  Width=125\nColumn 1  Weight=1.0000\n\n[Docking][Data]\n\n",
+  "imgui": "[Window][Debug##Default]\nPos=60,60\nSize=400,400\nCollapsed=0\n\n[Window][Update configuration]\nViewportPos=10,20\nViewportId=0x8C93FDF7\nSize=389,272\nCollapsed=0\n\n[Window][Update available]\nViewportPos=10,20\nViewportId=0x14E7B468\nSize=288,145\nCollapsed=0\n\n[Window][Emulation Configuration]\nViewportPos=913,213\nViewportId=0xA515CB4B\nSize=749,552\nCollapsed=0\n\n[Window][Notification]\nPos=503,352\nSize=304,96\nCollapsed=0\n\n[Window][###Open Binary]\nViewportPos=3,3\nViewportId=0xDEFA6028\nSize=830,789\nCollapsed=0\n\n[Window][###Open Archive]\nPos=2828,464\nSize=600,400\nCollapsed=0\n\n[Window][UI Configuration]\nViewportPos=10,20\nViewportId=0x36BEE24D\nSize=1024,512\nCollapsed=0\n\n[Window][Logs]\nViewportPos=-1944,142\nViewportId=0x50BD6962\nSize=928,901\nCollapsed=0\n\n[Window][###Open Disk Image]\nPos=447,285\nSize=600,400\nCollapsed=0\n\n[Table][0xF043A2BA,3]\nRefScale=16\nColumn 0  Sort=0v\n\n[Table][0xE2A30D4B,2]\nRefScale=16\nColumn 0  Width=125\nColumn 1  Weight=1.0000\n\n[Table][0x765EF860,3]\nRefScale=16\nColumn 0  Sort=0v\n\n[Table][0x5B1C2532,2]\nRefScale=16\nColumn 0  Width=125\nColumn 1  Weight=1.0000\n\n[Table][0xE5208AD0,3]\nRefScale=16\nColumn 0  Sort=0v\n\n[Table][0x6CEA18CB,2]\nRefScale=16\nColumn 0  Width=125\nColumn 1  Weight=1.0000\n\n[Docking][Data]\n\n",
   "loggers": {
     "CDROM": {
       "displayed": true,

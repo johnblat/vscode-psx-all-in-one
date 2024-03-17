@@ -26,6 +26,7 @@ LDFLAGS += -lsio
 LDFLAGS += -lsnd
 LDFLAGS += -lspu
 LDFLAGS += -ltap
+LDFLAGS += -lcd # only needed for cd-rom access
 LDFLAGS += -Wl,--end-group
 
 BUILD ?= Debug
@@ -142,6 +143,7 @@ DEPS += $(patsubst %.s,   %.dep,$(filter %.s,$(SRCS)))
 dep: $(DEPS)
 
 cd_rom: CPPFLAGS += -DCD_ROM_BUILD
+# cd_rom: LDFLAGS += -lcd
 cd_rom: all $(BINDIR)$(TARGET).$(TYPE)
 	@echo "Building CD-ROM "
 	tools/mkpsxiso-2.04-win64/bin/mkpsxiso.exe -y isoconfig.xml
