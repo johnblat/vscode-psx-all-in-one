@@ -9,20 +9,6 @@ I wanted to create a repo where one could just clone a repository, press `F5` an
 
 After that, maybe they can check out the code and start tinkering. 
 
-Maybe they'll even make a game. 
-
-Maybe they'll even make a game that's fun to play. 
-
-Maybe they'll share it with others. 
-
-Maybe they'll have a good time. 
-
-Maybe they'll even make a game that's fun to play and they'll share it with others and they'll have a good time and they'll make a friend. 
-
-Maybe they'll even make a friend and they'll be happy. 
-
-Maybe they'll be so happy they live a long and fulfilling life. 
-
 Maybe they'll even make a game that's so much fun to play and they'll share it with others and they'll have a good time and they'll make a friend and they'll be happy and they'll live a long and fulfilling life and they'll die peacefully in their sleep. 
 
 Maybe they'll be remembered fondly by their loved ones. 
@@ -68,7 +54,8 @@ I'm also not saying that this repo is the best way to get started. It probably i
     - Contains the PSX reference for C structs and functions for working with PsyQ
 - `.\docs\*` - Everything else in here is just documentation for the PSX
     - Contains the PSX documentation for the PSX hardware and things like how the PSX processes graphics
-- 
+
+## 
 
 ## Debugging Bugginess
 - If you remove all breakpoints while running the code, and then add a breakpoint, the code will not stop at the breakpoint. 
