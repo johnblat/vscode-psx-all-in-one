@@ -1,5 +1,14 @@
 # PlayStation (PSX) Development Getting Started Guide
 :exclamation: :exclamation: Please **submit and issue** for any questions/clarifications on the contents, or **create a PR** with any changes that will make the guide easier to follow. It is especially valuable to have someone completely new to PSX development raise any issues. :exclamation: :exclamation:
+
+## Table of Contents
+1. [Modern PSX Development Overview](#modern-psx-development-overview)
+1. [Running a disk image in the PCSX-Redux Emulator](#running-a-disk-image-in-the-pcsx-redux-emulator)
+1. [PSX Executable Compilation and Linking](#psx-executable-compilation-and-linking)
+1. [PSX Disk Image Creation](#psx-disk-image-creation)
+1. [PSX PCSX-Redux Debugging](#psx-pcsx-redux-debugging)
+1. [PSX Soft Modding](#psx-soft-modding)
+
 ## Modern PSX Development Overview
 The year is 2024, and PSX development has never been easier and more.... modern (:question: :grey_question: :question:)
 
@@ -7,10 +16,10 @@ You will use a combination of new tools, old tools, a lot of documentation, and 
 
 This guide will cover the following "Getting Started" topics:
 - Setting up your development environment
-- Running a disc image in the PCSX-Redux emulator
+- Running a disk image in the PCSX-Redux emulator
 - Compiling a PSX executable
 - Debugging a PSX executable
-- Creating a PSX disc image with your program on it
+- Creating a PSX disk image with your program on it
 - Running your program on a PSX console
 - Soft modding a PSX console
 
@@ -22,10 +31,10 @@ This guide will cover the following "Getting Started" topics:
 > :oncoming_police_car: If you can do the crime, you can do the time. :oncoming_police_car: 
 
 ### Terms I will use in this guide
-- __PSX Alternative Media (PAM)__: Any media that is not an official region-specific software on a PSX CD-ROM. This includes **homebrew content**, personal **backups** of original PSX games, and official discs from **other regions**. 
+- __PSX Alternative Media (PAM)__: Any media that is not an official region-specific software on a PSX CD-ROM. This includes **homebrew content**, personal **backups** of original PSX games, and official disks from **other regions**. 
 - **PSX Alternative Storage (PAS)**: Any storage medium that is not a CD-ROM. This includes SD cards, and a PC connected to the PSX via a serial cable.
 - **Homebrew Media**: Media made by non-official developers for the PSX. This includes games, demos, and other software.
-- **Backups**: A copy of a game that you own. Typically, a copy burned onto a CD-R disc.
+- **Backups**: A copy of a game that you own. Typically, a copy burned onto a CD-R disk.
 
 ### Software
 These tools are included in this repository. If you wish to clone or download this repository, you will have everything you need to get started. I will also provide download links if you want to download them yourself. 
@@ -70,8 +79,8 @@ These tools are included in this repository. If you wish to clone or download th
 - **PlayStation Console**
     - To run your program on it :p
     - Will need to be either hard or soft modded to run your program. This guide will focus on soft modding, as that is the method I have done, but I'll provide links to hard modding resources.
-- **Blank CD-R Discs**
-    > :pencil2: The PSX can not run CD-RW discs. Only CD-R will work.
+- **Blank CD-R disks**
+    > :pencil2: The PSX can not run CD-RW disks. Only CD-R will work.
 - **PSX Memory Card with FreePSXBoot + Unirom8**
     - Will be used for launching your program!
 - **USB stick with Memory Card Annihilator and FreePSXBoot**
@@ -81,8 +90,8 @@ These tools are included in this repository. If you wish to clone or download th
 - **Playstation 2 Console**
     - Used to format a PSX memory card and install FreePSXBoot on it. 
     - A PS2 is used because it is a device that contains both a PSX memory card slot and a USB port. If you don't use a PS2, you would need a PSX memory card reader/writer that could be used with your PC. This would involve buying a specialized device, or DIYing one yourself.
-- **Disc Reader/Writer**
-    - Used to burn CD-R discs with your program on it.
+- **disk Reader/Writer**
+    - Used to burn CD-R disks with your program on it.
     - Can be used to make a copy of a PSX game you own to test that it works on a modded PSX.
 > :pencil2: Creating or obtaining the FreeMcBoot memory card, the USB stick contents, and the FreePSXBoot memory card will be covered later
 
@@ -97,8 +106,8 @@ Some tools in the repository might be better put on your path for launching via 
 - `tools\pcsx-redux\`
     - Sometimes you'll need to run the emulator with command line arguments such as `-pcdrv` and `-pcdrvbase`, which will be covered later
 - `tools\mkpsxiso-2.04-win64\bin`
-    - Sometimes you'll want to create a disc image without using the Makefile (which contains rules for building to a disc image)
-    - This allows you to dump contents of a disc image for debugging purposes if there are issues running it
+    - Sometimes you'll want to create a disk image without using the Makefile (which contains rules for building to a disk image)
+    - This allows you to dump contents of a disk image for debugging purposes if there are issues running it
 
 
 > :pencil2: You can put the other tools on your path too, but these are the ones I found I use on the command line.
@@ -111,16 +120,19 @@ Some tools in the repository might be better put on your path for launching via 
     - An unfinished/work-in-profress series of tutorials on PSX development.
 
 
-## Running a Disc Image in the PCSX-Redux Emulator
-1. Create a backup of a PSX game you own with a Disc Reader, or obtain a disc image of a PSX game through some other legal means
+## Running a disk image in the PCSX-Redux Emulator
+1. Create a backup of a PSX game you own with a disk Reader, or obtain a disk image of a PSX game through some other legal means
 1. Launch `pscx-redux`
 1. Go to `File/Open Disk Image` and then select the `.iso`, `.bin`, or `.cue` file of the game you want to run
     - You can also load the disk image from the command line with the `-iso` argument. Example: `pscx-redux -cdrom "path/to/game.iso"`
-    >  :pencil2: Disc images in the ISO-9660 format will either be stored in an `.iso` file or a `.bin` file. The `.bin` file will have a `.cue` file that contains information about the `.bin` file. The `.cue` file is used to load the `.bin` file into the emulator.
+    >  :pencil2: disk images in the ISO-9660 format will either be stored in an `.iso` file or a `.bin` file. The `.bin` file will have a `.cue` file that contains information about the `.bin` file. The `.cue` file is used to load the `.bin` file into the emulator.
 1. Go to `Emulation/Start` to start the game, or press `F5`.
     - You can also run the disk image from the command line with the `-run` argument. Example: `pscx-redux -iso "path/to/game.iso" -run`
+
+
     
 
     > :pencil2: You can view the entire list of PCSX-Redux CLI Flags [here](https://pcsx-redux.consoledev.net/cli_flags/)
 
-## Compiling a PSX Executable
+## PSX Executable Compilation and Linking
+- Makefile contains
