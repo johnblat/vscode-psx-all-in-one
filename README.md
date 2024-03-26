@@ -22,7 +22,7 @@
 
 ---
 ## Modern PSX Development Overview
----
+
 The year is 2024, and PSX development has never been easier and more.... modern (:question: :grey_question: :question:)
 
 You will use a combination of new tools, old tools, a lot of documentation, and a converted version of the official sony PSX software development kit called **PsyQ**.
@@ -130,7 +130,7 @@ Some tools in the repository might be better put on your path for launching via 
 
 ---
 ## Running a disk image in the PCSX-Redux Emulator
----
+
 If you are unfamiliar with using `pcsx-redux`, or emulators in general, it's helpful to first run a disk image in the emulator to get a feel for how it works. 
 
 1. Create a backup of a PSX game you own with a disk reader, or obtain a disk image of a PSX game through some other legal means
@@ -157,7 +157,7 @@ If you are unfamiliar with using `pcsx-redux`, or emulators in general, it's hel
 
 ---
 ## Quick Start Guide
----
+
 ### Building and Running a PSX Program
 1. In the project directory, run `make`
     - This will compile the project and create a `.ps-exe` file that can be ran in the emulator
@@ -199,7 +199,7 @@ The above will get you started with building, running, and debugging programs. I
 
 ---
 ## Compilation and Linking
----
+
 The PSX has a MIPS R3000 CPU, therefore the code must be cross-compiled with a MIPS compiler. Classic PSX executable (ps-exe) compilation was done with the official `ccpsx` compiler, however, other compilers like `mipsel-none-elf-gcc` or `mipsel-linux-gnu-gcc` can be used to compile PSX executables on modern 64-bit workstations. In addition, a custom converted version of the official Sony PSX SDK called **PsyQ** is used to provide the necessary libraries that can be used by modern compilers.
 
 PSX executables are statically linked, as opposed to dynamically linked. Click [here](https://www.linkedin.com/pulse/differences-between-static-dynamic-libraries-juan-david-tuta-botero/) for a more information on the difference between the two linking methods. Static linking is very common on embedded systems, as there may not be a loader program to load shared libraries at runtime, as is the case on destkop operating systems like Windows, Linux, and MacOS.
@@ -257,37 +257,37 @@ PSX executables are statically linked, as opposed to dynamically linked. Click [
 
 ### Libraries
 
-In the `Makefile`, library binaries get linked like so:
-```bash
-    LDFLAGS += -Wl,--start-group
-    LDFLAGS += -lapi
-    LDFLAGS += -lc
-    LDFLAGS += -lc2
-    LDFLAGS += -lcard
-    LDFLAGS += -lcomb
-    LDFLAGS += -lds
-    LDFLAGS += -letc
-    LDFLAGS += -lgpu
-    LDFLAGS += -lgs
-    LDFLAGS += -lgte
-    LDFLAGS += -lgpu
-    LDFLAGS += -lgun
-    LDFLAGS += -lhmd
-    LDFLAGS += -lmath
-    LDFLAGS += -lmcrd
-    LDFLAGS += -lmcx
-    LDFLAGS += -lpad
-    LDFLAGS += -lpress
-    LDFLAGS += -lsio
-    LDFLAGS += -lsnd
-    LDFLAGS += -lspu
-    LDFLAGS += -ltap
-    LDFLAGS += -lcd # only needed for cd-rom access
-    LDFLAGS += -Wl,--end-group
-```
-These libraries can be found in the `thirdparty/nugget/psyq/lib` directory. They are `.a` (archive) objects, which implies a static library, as opposed to a shared/dynamic library. A shared library would have the `.so` (shared object) extension. For Windows Libraries, these would be equivalent to `.lib` and `.dll` (dynamically linked library) files, respectively.
+The following libraries will be linked into the executable if their functionality is needed in the target executable:
+- `libapi.a`
+- `libc.a`
+- `libc2.a`
+- `libcard.a`
+- `libcomb.a`
+- `libds.a`
+- `libetc.a`
+- `libgpu.a`
+- `libgs.a`
+- `libgte.a`
+- `libgpu.a`
+- `libgun.a`
+- `libhmd.a`
+- `libmath.a`
+- `libmcrd.a`
+- `libmcx.a`
+- `libpad.a`
+- `libpress.a`
+- `libsio.a`
+- `libsnd.a`
+- `libspu.a`
+- `libtap.a`
+- `libcd.a`
 
-A description of these libraries can be found in the PSX Documentation found in `docs\LibRef47.pdf` and `docs\LibOver47.pdf`.
+These libraries can be found in the `thirdparty/nugget/psyq/lib` directory. They are `.a` (archive) objects, which implies a static library, as opposed to a shared/dynamic library. A shared library would have the `.so` (shared object) extension. These file extensions for the library types are also used on MacOS and Linux. For Windows Libraries, these would be equivalent to `.lib` and `.dll` (dynamically linked library) files, respectively.
+
+A description of these libraries can be found in the PSX Documentation found in `docs/LibRef47.pdf` and `docs/LibOver47.pdf`.
+
+> :pencil2: You may notice a library `libsn.a` under the psyq libraries. This library enables PC at `thirdparty/nugget/common/kernel/pcdrv.h` can be used in it's place.
+
 
 ### Linking Scripts
 > The main purpose of the linker script is to describe how the sections in the input files should be mapped into the output file, and to control the memory layout of the output file. However, when necessary, the linker script can also direct the linker to perform many other operations, using the linker commands
@@ -318,7 +318,7 @@ A description of these libraries can be found in the PSX Documentation found in 
 
 ---
 ## Disk Image Creation
----
+
 PSX Disks use the ISO-9660 format, and are typically stored in a `.bin` with an accopmanying [.cue file](https://en.wikipedia.org/wiki/Cue_sheet_(computing)). 
 
 1. Obtain a License File by downloading the a non-nugget version of the PsyQ SDK [here](https://www.psxdev.net/downloads.html) 
@@ -333,7 +333,7 @@ PSX Disks use the ISO-9660 format, and are typically stored in a `.bin` with an 
 
 ---
 ## PCSX-Redux Debugging
----
+
 
 1. Launch `pscx-redux`
 1. Go to `Configuration/Emulation`
@@ -405,7 +405,7 @@ If you remove all breakpoints while running the code, and then add a breakpoint,
 
 ---
 ## Soft Modding
----
+
 In order to run homebrew media, or any alternative media on the PSX, the PSX must be modded. There are two ways to mod a PSX: soft modding and hard modding. Soft modding inovles utilizing a software exploit to run alternative media. A hard mod involves physically modifying the PSX to run alternative media, typically with a mod chip.
 
 [This video](youtube.com/watch?v=6stVV01V1Hk) covers soft modding a PSX. It shows how to install FreePSXBoot on a PSX memory card using the PS2 FreeMcBoot memory card and a USB stick with the FreePSXBoot software on it.
