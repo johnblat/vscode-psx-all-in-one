@@ -250,37 +250,37 @@ PSX executables are statically linked, as opposed to dynamically linked. Click [
 
 ### Libraries
 
-In the `Makefile`, library binaries get linked like so:
-```bash
-    LDFLAGS += -Wl,--start-group
-    LDFLAGS += -lapi
-    LDFLAGS += -lc
-    LDFLAGS += -lc2
-    LDFLAGS += -lcard
-    LDFLAGS += -lcomb
-    LDFLAGS += -lds
-    LDFLAGS += -letc
-    LDFLAGS += -lgpu
-    LDFLAGS += -lgs
-    LDFLAGS += -lgte
-    LDFLAGS += -lgpu
-    LDFLAGS += -lgun
-    LDFLAGS += -lhmd
-    LDFLAGS += -lmath
-    LDFLAGS += -lmcrd
-    LDFLAGS += -lmcx
-    LDFLAGS += -lpad
-    LDFLAGS += -lpress
-    LDFLAGS += -lsio
-    LDFLAGS += -lsnd
-    LDFLAGS += -lspu
-    LDFLAGS += -ltap
-    LDFLAGS += -lcd # only needed for cd-rom access
-    LDFLAGS += -Wl,--end-group
-```
-These libraries can be found in the `thirdparty/nugget/psyq/lib` directory. They are `.a` (archive) objects, which implies a static library, as opposed to a shared/dynamic library. A shared library would have the `.so` (shared object) extension. For Windows Libraries, these would be equivalent to `.lib` and `.dll` (dynamically linked library) files, respectively.
+The following libraries will be linked into the executable if their functionality is needed in the target executable:
+- `libapi.a`
+- `libc.a`
+- `libc2.a`
+- `libcard.a`
+- `libcomb.a`
+- `libds.a`
+- `libetc.a`
+- `libgpu.a`
+- `libgs.a`
+- `libgte.a`
+- `libgpu.a`
+- `libgun.a`
+- `libhmd.a`
+- `libmath.a`
+- `libmcrd.a`
+- `libmcx.a`
+- `libpad.a`
+- `libpress.a`
+- `libsio.a`
+- `libsnd.a`
+- `libspu.a`
+- `libtap.a`
+- `libcd.a`
 
-A description of these libraries can be found in the PSX Documentation found in `docs\LibRef47.pdf` and `docs\LibOver47.pdf`.
+These libraries can be found in the `thirdparty/nugget/psyq/lib` directory. They are `.a` (archive) objects, which implies a static library, as opposed to a shared/dynamic library. A shared library would have the `.so` (shared object) extension. These file extensions for the library types are also used on MacOS and Linux. For Windows Libraries, these would be equivalent to `.lib` and `.dll` (dynamically linked library) files, respectively.
+
+A description of these libraries can be found in the PSX Documentation found in `docs/LibRef47.pdf` and `docs/LibOver47.pdf`.
+
+> :pencil2: You may notice a library `libsn.a` under the psyq libraries. This library enables PC at `thirdparty/nugget/common/kernel/pcdrv.h` can be used in it's place.
+
 
 ### Linking Scripts
 > The main purpose of the linker script is to describe how the sections in the input files should be mapped into the output file, and to control the memory layout of the output file. However, when necessary, the linker script can also direct the linker to perform many other operations, using the linker commands
