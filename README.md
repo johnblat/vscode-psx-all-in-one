@@ -139,7 +139,7 @@ If you are unfamiliar with using `pcsx-redux`, or emulators in general, it's hel
     > :oncoming_police_car: If you can do the crime, you can do the time. :oncoming_police_car:
 1. Launch `pscx-redux`
 1. Go to `File/Open Disk Image` and then select the `.iso`, `.bin`, or `.cue` file of the game you want to run
-    - You can also load the disk image from the command line with the `-iso` argument. Example: `pscx-redux -cdrom "path/to/game.iso"`
+    - You can also load the disk image from the command line with the `-iso` argument. Example: `pscx-redux -iso "path/to/game.iso"`
     >  :pencil2: disk images in the ISO-9660 format will either be stored in an `.iso` file or a `.bin` file. The `.bin` file will have a `.cue` file that contains information about the `.bin` file. The `.cue` file is used to load the `.bin` file into the emulator.
 1. Go to `Emulation/Start` to start the game, or press `F5`.
     - You can also run the disk image from the command line with the `-run` argument. Example: `pscx-redux -iso "path/to/game.iso" -run`
@@ -415,7 +415,7 @@ In order to run homebrew media, or any alternative media on the PSX, the PSX mus
 
 ---
 ## Running a Burned Disk on a real PSX
----
+
 1. Use a software like [ImgBurn](https://www.imgburn.com/index.php?act=download) to burn the generated disk image file from the [Disk Image Creation](#disk-image-creation) section to a blank CD-R disk using a CD/DVD writer. Select the `<image name>.cue` file.
     - There is also the windows `ISOburn.exe` tool that can be used from the command line to burn the disk image. This might be a good way to automate the process via a script.
 1. With a `freePSXboot` Memory card, launch the PSX console
