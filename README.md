@@ -10,6 +10,7 @@
 1. [Disk Image Creation](#disk-image-creation)
 1. [PCSX-Redux Debugging](#pcsx-redux-debugging)
 1. [Soft Modding](#soft-modding)
+1. [Debugging on a PSX](#debugging-on-a-psx)
 
 
 
@@ -30,13 +31,7 @@ You will use a combination of new tools, old tools, a lot of documentation, and 
 
 > :exclamation: This guide and repo was written with Windows as the development environment in mind. If you use Linux or MacOS and use this guide, please make changes to it and submit a PR providing updates for those Operating Systems. :exclamation:
 
- 
 
-### Terms I will use in this guide
-- __PSX Alternative Media (PAM)__: Any media that is not an official region-specific software on a PSX CD-ROM. This includes **homebrew content**, personal **backups** of original PSX games, and official disks from **other regions**. 
-- **PSX Alternative Storage (PAS)**: Any storage medium that is not a CD-ROM. This includes SD cards, and a PC connected to the PSX via a serial cable.
-- **Homebrew Media**: Media made by non-official developers for the PSX. This includes games, demos, and other software.
-- **Backups**: A copy of a game that you own. Typically, a copy burned onto a CD-R disk.
 
 ### Software
 These tools are included in this repository. If you wish to clone or download this repository, you will have everything you need to get started. I will also provide download links if you want to download them yourself. 
@@ -421,3 +416,7 @@ In order to run homebrew media, or any alternative media on the PSX, the PSX mus
 1. With a `freePSXboot` Memory card, launch the PSX console
 1. Insert the burned disk into the PSX
 1. Select the menu option to boot the disk.
+
+
+---
+## Debugging on a PSX
