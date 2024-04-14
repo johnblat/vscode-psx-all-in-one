@@ -38,7 +38,7 @@ These tools are included in this repository. If you wish to clone or download th
 - **VS Code**
     - As far as I know, a lot of prominent PSX Homebrew developers use VS Code as their text editor of choice. I've provided VS Code debug and task configurations in this repository that will help you build and debug your PSX programs. 
 - **PCSX-Redux Emulator**:
-    - A PSX emulator that can run PAM, PAS.
+    - A PSX emulator that can run unlicensed games and original games.
     - [Download page](https://github.com/grumpycoders/pcsx-redux?tab=readme-ov-file#where)
 - **GnuWin32/bin/make.exe**:
     - A Windows make port that can be used to build the code with the Makefile provided.
@@ -59,7 +59,7 @@ These tools are included in this repository. If you wish to clone or download th
     - [Download Page](https://www.psx-place.com/threads/memory-card-annihilator-v2-0a-a-new-version-after-more-than-11-years.36277/)
     - [Other Download Page](https://gbatemp.net/download/memory-card-annihilator.35971/)
 - **FreePSXBoot**: 
-    - A software that gets loaded onto a memory card, and allows the PSX to run PAM and PAS.
+    - A software that gets loaded onto a memory card, and allows the PSX to run unlicensed games.
     - [Download Page](https://github.com/brad-lin/FreePSXBoot/releases/tag/v2.1)
 
 - **Tim Edit**:
