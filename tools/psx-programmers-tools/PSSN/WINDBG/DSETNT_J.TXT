@@ -1,0 +1,150 @@
+$PSDocId: Document Release 1.0 for Run-time Library Release 4.4$
+
+
+       SN Debugger for Windows ver.2.4 セットアップマニュアル (for WinNT)
+
+
+
+このファイルは、WindowsNT 上で SN Debugger for Windows のセットアップを円滑に
+行って頂くためのマニュアルです。
+
+
+●１ 動作条件
+
+  WindowsNT 4.0 Service Pack 3
+  現在サポートされているのはDTL-H2500のみです。
+
+
+●２ ディレクトリ構成について
+
+  SN Debugger for Windows を含むSDevTCツールのディレクトリ構成は、以下のように
+  なります。
+
+  （ Windows版デバッガをインストールしたディレクトリ構成 ）
+   \ ━━━ pssn\  ━┳━ bin\ ━┳━ Windowsデバッガ本体、及び関連ツール
+                     ┃          ┃   SN Build Tools for Win32
+                     ┃          ┃   GNU Compiler for Win32
+                     ┃          ┣━ dos\ (SN Build Tools for DOS)
+                     ┃          ┃        (GNU Compiler for DOS)
+                     ┃          ┣━ flash25\ (H2500ファームウェア)
+                     ┃          ┣━ flash27\ (H2700ファームウェア)
+                     ┃          ┗━ prefsmpl\ (preftsectのサンプル）
+                     ┣━ etc\ (その他のファイル)
+                     ┣━ examples\ (PSY-CO サンプル)
+                     ┣━ include\ (SN Include files)
+                     ┣━ lib\ (SN Library files)
+                     ┣━ stubs\ (PSY-CO stubs)
+                     ┣━ system\ ━┳━ 各種DLL、ヘルプファイル
+                     ┃             ┗━ PLUGINS\ (プラグインモジュール)
+                     ┣━ windbg\ (Debugger for Windows インストールパッケージ)
+                     ┗━ gnusrc\ (GCC 2.8.1 ソース)
+
+
+●３ インストール前の準備
+
+  (1) 現在の環境を保存する
+      \pssn,\compilerのディレクトリ名を変更するなどして、現在の環境を保存して
+      ください。
+      > ren pssn pssn_old
+      > ren compiler compiler_old
+
+  (2) \pssn ディレクトリ以下を HDD にコピーしてください。但し \pssn\gnusrc, 
+      \pssn\windbg は特にコピーする必要はありません。
+      > xcopy e:\pssn c:\pssn /S
+
+  (3) H2500ファームウェア：
+      NTで使用するには、H2500ファームウェアをアップグレードする必要がありま
+      す。最新のファームウェアは、PlayStationライブラリデイスクVer.4.3 の
+      \pssn\flash25 に収められています。
+      ただし、ファームの書き換え作業は、DOS又はWindows95環境下で行わなければな
+      りません（書き換えツールがNTでは動作しない為です）。
+      以下の手順でファームの書き換え作業を行なってください。
+
+      1. DOS又はWindows95の起動FDを一枚用意する
+      2. FDに \pssn\flash25 以下をコピーする
+      3. 一旦シャットダウンして、FDから再起動する
+      4. ファームウェアの書き換えを行なう
+         A> flash.bat
+      6. FDを抜き、PCをリセットして再びWindowsNTを立ち上げる
+
+
+●４ インストール
+
+  (1) \pssn\windbg\Psx1604.EXE を起動して下さい。
+
+  (2) 各ツールの格納先を指定します。格納先はデフォルトで c:\pssn 以下になって
+      います。
+      ３つのチェックボックスがONになっていますが、SN Build Tools 及び GNU C
+      Compiler の最新モジュールは、PlayStationライブラリディスク又はSCE-NETで
+      配布していますので、そちらを使用する事をお勧めします。
+      よってここでは SN Debugger のみをインストールします。SN Build Tools と 
+      Gnu C Compiler のチェックは外してください。
+
+        （デフォルトのディレクトリ）
+        SN Build Tools   c:\pssn\bin  チェックを外す
+        Gnu C Compiler   c:\pssn      チェックを外す
+        SN Debugger      c:\pssn      チェック
+
+  (3) autoexec.bat の変更ダイアログが現れます。Yesを選択すると以下の２行を追加
+      します。特に問題が無ければYesを選択してください。現在のautoexec.batは、
+      autoexec.00Xという名前に変更されて保存されます。
+
+        SET PATH=%PATH%;"C:\pssn\bin"
+        SET SN_PATH=C:\pssn\bin
+
+      autoexec.bat以外の、他のバッチファイルで環境変数を設定したい場合は、
+      ここでNoを選択し、後で自分でバッチファイルを作成してください。
+
+  (4) ファイルがコピーされます。
+
+  (5) スタートメニュー追加ダイアログが現れます。
+      特に問題が無ければYesを選択してください。
+
+  (6) sn.iniに関する注意、readmeを読むかどうかのダイアログが現れます。
+      sn.iniのカスタマイズについては後述します。
+
+  (7) システムのリブート要求ダイアログが現れます。
+      特に問題が無ければYesを選択してください。
+
+
+●５ インストールの確認
+
+  (1) [コントロールパネル→デバイス] を開き、デバイス名 [H2500] の状態が
+      [開始] になっている事を確認してください。
+
+  (2) スタートメニューの [プログラム→SN Debugger→Check System For Errors] を
+      起動し「Run Diagnostic Check」をクリックして正常に終了する事を確認してく
+      ださい。
+
+  (3) スタートメニューの [プログラム→SN Debugger→SN File Server] を起動しま
+      す。[Command→Ping] で、以下の様に表示される事を確認してください。
+      バージョン番号が違う場合は、ファームウェアが正常に書き込まれていません。
+        unit 0 - R3000       SONY_PSX7.0A is stopped (9)
+
+  (4) DOSプロンプトを立ち上げ、PATHとSN_PATHが正しく設定されているか確認して
+      ください。
+      > set
+         :
+      PATH=C:\;C:\WINDOWS;.....;C:\pssn\bin
+      SN_PATH=c:\pssn\bin
+
+
+●６ sn.ini について
+
+  正常にインストールされていれば、sn.ini の変更は特に必要ありません。
+  ただし「４ インストール」において「SN Build Tools」をインストールしてしまっ
+  た場合、インストーラは、\pssn\bin\sn.ini を上書きしてしまいます。このため保
+  存用ファイルとして、sn_SCE.ini が収められています。
+  もし sn.ini を上書きしてしまった場合は、必ず sn.ini を sn_SCE.ini と同じ内容
+  に戻して下さい。
+      > ren sn.ini sn_000.ini
+      > copy sn_SCE.ini sn.ini
+
+
+●７ DOS版デバッガ(dbugpsx)との併用について
+
+  dbugpsx, dexbios, H25bios, resetps, run 等のツール群は、WindowsNT 環境では
+  使用できません。
+
+
+以上

@@ -1,0 +1,66 @@
+
+$PSDocId: Document Release 1.0 for Run-time Library Release 4.4$
+
+                      Copyright(C) 1997 Sony Computer Entertainment Inc.
+                                                    All Rights Reserved.
+
+
+
+                   　　　ディレクトリ構成の変更について
+
+
+「SDevTC ツール98/10/1版」より、pssn以下のディレクトリ構成が変更になりました。
+
+  1) 従来 \pssn にあったツール群を、\pssn\bin に移動しました。
+  2) 従来の \compiler の内容を \pssn\bin に移動しました。
+  3) SN Debugger for Windows を \pssn\windbg に追加しました。
+  4) GCC 2.8.1 ソース を \pssn\gnusrc に追加しました。
+
+つきましては、以下に挙げる移行手順例に従って、新ディレクトリ構成への移行作業を
+行って頂きますようお願い致します。
+
+
+＜新ディレクトリ構成への移行手順例＞
+
+  Windows版デバッガをインストールする場合の手順は、セットアップファイル pssn\
+  windbg\dset95(NT)_j.txt を参照してください。
+
+  (1) 現在の環境を保存する
+      \pssn,\compilerのディレクトリ名を変更するなどして、現在の環境を保存して
+      ください。
+      > ren pssn pssn_old
+      > ren compiler compiler_old
+
+  (2) \pssn ディレクトリ以下を HDD にコピーしてください。但し \pssn\gnusrc, 
+      \pssn\windbg は特にコピーする必要はありません。
+      > xcopy e:\pssn c:\pssn /S
+
+  (3) \pssn\bin にパスを通す。
+      > SET PATH=%PATH%;c:\pssn\bin
+
+  (4) 環境変数 SN_PATH を \pssn\bin に設定する。
+      > SET SN_PATH=c:\pssn\bin
+
+
+   旧ディレクトリ構成：
+   \ ━┳━ pssn\      ━┳━ SN Build Tools for Win32
+       ┃                ┣━ dos\ (SN Build Tools for DOS)
+       ┃                ┣━ flash25\ (H2500ファームウェア)
+       ┃                ┣━ flash27\ (H2700ファームウェア)
+       ┃                ┗━ prefsmpl\ (preftsectのサンプル）
+       ┗━ compiler\  ━┳━ GNU Compiler for Win32
+                         ┗━ dos\ (GNU Compiler for DOS)
+
+   新ディレクトリ構成：
+   \ ━━━ pssn\  ━┳━ bin\ ━┳━ SN Build Tools for Win32
+                     ┃          ┃   GNU Compiler for Win32
+                     ┃          ┣━ dos\ (SN Build Tools for DOS)
+                     ┃          ┃        (GNU Compiler for DOS)
+                     ┃          ┣━ flash25\ (H2500ファームウェア)
+                     ┃          ┣━ flash27\ (H2700ファームウェア)
+                     ┃          ┗━ prefsmpl\ (preftsectのサンプル）
+                     ┣━ windbg\ (Debugger for Windows インストールパッケージ)
+                     ┗━ gnusrc\ (GCC 2.8.1 ソース)
+
+
+以上

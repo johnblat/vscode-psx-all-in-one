@@ -1,0 +1,164 @@
+$PSDocId: Document Release 1.0 for Run-time Library Release 4.4$
+PlayStation(R) Programmer Tool DTL-S2350A Runtime Library Release 4.4
+
+                   Copyright (C) 1998 Sony Computer Entertainment Inc.
+                                                  All Rights Reserved.
+
+Release 4.3 から、プログラマツールとドキュメントは別ディスクになりま
+した。ここでは、両ディスクに関する情報を提供します。
+
+DTL-S2350 Runtime Library Ver.4.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+当ディスクは DTL-S2340 Runtime Library Release 4.3 の Update 版 CD-ROM 
+です。
+
+< インストール方法 >
+まず、現在の \psx 等のディレクトリのバックアップをお取り下さい。
+
+	>ren \psx \psx.43 
+	>ren \pssn \pssn.43
+
+続いて CD-ROM のファイルをコピーします。
+CD-ROM が d ドライブにマウントされている場合(c ドライブがコピー先)、
+
+	>copy d:psx44.lzh c:\
+	>copy d:pssn44.lzh c:\
+
+を行ない、アーカイブを解凍します。
+
+	>cd c:\
+	>lha x psx44.lzh
+	>lha x pssn44.lzh
+
+その他のファイルをコピーします。
+
+	>xcopy /s d:psxart c:psxart
+	>xcopy /s d:pa c:pa
+		：
+
+
+< DTL-S2350 ディレクトリ構成 >
+新規追加されたディレクトリや、名称が変更されたディレクトリなどがありま
+すので、以下のディレクトリ構成図や該当ディレクトリの README ファイルを
+参照の上お使い下さい。
+
+- libhmd のプリミティブドライバのソースコードを psx\src\lib\hmd に公開
+  しました。
+  詳細は psx\src\lib\hmd\readme_j.txt を参照ください。
+
+- 新規に追加されたディレクトリ
+
+pssn\bin			exe, dll ファイル
+pssn\gnusrc			GCC 2.8.1 ソース
+pssn\windbg			SN Debugger for Windows
+psx\sample\kanji\chinese	中国語フォントデータ・ビューア
+psx\sample\etc\mcgui		メモリーカード GUI モジュールサンプル
+psx\sample\mcx			PDA ライブラリサンプル
+psx\src				ソース
+
+- 移動・削除されたディレクトリ
+
+compiler			pssn\bin に移動したため削除
+pssn\dos			pssn\bin\dos へ移動
+pssn\flash25			pssn\bin\flash25 へ移動
+pssn\flash27			pssn\bin\flash27 へ移動
+pssn\prefsmpl			pssn\bin\prefsmpl へ移動
+psx\sample\graphics\hmd\pdriver	HMD プリミティブドライバソースコード公開に
+				伴い削除
+
+
+┌─1st_read			はじめにお読み下さい 
+│  ├─1st_read.txt		ディレクトリ全体の説明ほか
+│  └─startup.doc		スタートアップマニュアル
+├─coff			COFF ライブラリ
+│  ├─include			インクルードファイル (改行コード 0x0A のみ)
+│  ├─lib			ライブラリ (NEWS,CodeWarrior,SGI用)
+│  ├─readme_e.txt		COFF ディレクトリの説明 (English)
+│  └─readme_j.txt		COFF ディレクトリの説明 (Japanese)
+├─deci			DECI ツール
+│  ├─flash25			DECI 用ファームウェア(DTL-H2500)
+│  ├─flash27			DECI 用ファームウェア(DTL-H2700)
+│  ├─patch20			DECI 用ファームウェア(DTL-H2000)
+│  ├─psx95isa		DECI 用ドライバ (Win95 + DTL-H2000/H2700) 
+│  ├─psx95pci		DECI 用ドライバ (Win95 + DTL-H2500)
+│  ├─psxNTisa		DECI 用ドライバ (NT4.0 + DTL-H2000/H2700)
+│  ├─psxNTpci		DECI 用ドライバ (NT4.0 + DTL-H2500)
+│  ├─setup_e.txt		セットアップガイド (English)
+│  └─setup_j.txt		セットアップガイド (Japanese)
+├─pa				パフォーマンスアナライザ、ドキュメント
+│  ├─bin			exe, dll ファイル
+│  ├─data			計測データ
+│  ├─doc			パフォーマンスアナライザマニュアル
+│  ├─pachg_e.txt		前バージョンからの変更 (English)
+│  ├─pachg_j.txt		前バージョンからの変更 (Japanese)
+│  ├─psx95pa			PA 用ドライバ (Win95)
+│  ├─psxNTpa			NT 用ドライバ (NT4.0)
+│  ├─setup_e.txt		セットアップガイド (English)
+│  └─setup_j.txt		セットアップガイド (Japanese)
+├─pssn			SDevTC ツール
+│  ├─bin			
+│  │  ├─dos			dos 環境用 SDevTC 用ツール
+│  │  ├─flash25		SDevTC 用ファームウェア (DTL-H2500)
+│  │  ├─flash27		SDevTC 用ファームウェア (DTL-H2700) 
+│  │  └─prefsmpl		ライブラリをオーバーレイするサンプル
+│  ├─gnusrc			GCC 2.8.1 ソース
+│  ├─readme.1st		名称変更等の説明
+│  ├─readme_j.txt		SDevTC 変更履歴
+│  └─windbg			SN Debugger for Windows
+├─pssn44.lzh			PSSN ツールの LZH ファイル
+├─psx				PSX ライブラリ・サンプル・ドキュメント
+│  ├─bin			ユーティリティ (exe, batファイル)
+│  ├─data			サンプル用データ
+│  ├─include			インクルードファイル
+│  ├─lib			ライブラリファイル
+│  ├─libchg_e.txt		ライブラリ関係前バージョンからの変更 (English)
+│  ├─libchg_j.txt		ライブラリ関係前バージョンからの変更 (Japanese)
+│  ├─sample			サンプル
+│  ├─smpchg_e.txt		サンプル関係前バージョンからの変更 (English)
+│  ├─smpchg_j.txt		サンプル関係前バージョンからの変更 (Japanese)
+│  ├─smplst_e.txt		サンプルの一覧及び解説 (English)
+│  ├─smplst_j.txt		サンプルの一覧及び解説 (Japanese)
+│  └─src			ソース
+├─psx44.lzh			PSX ディレクトリの LZH ファイル
+├─psxart
+│  ├─readme_e.txt		前バージョンからの変更 (English)
+│  ├─readme_j.txt		前バージョンからの変更 (Japanese)
+│  ├─sgi			SGI 用グラフィックスデータコンバータ
+│  └─x86			PC 用 データ コンバータ
+└─xdata			サンプルデータ
+　  ├─da
+　  ├─exe
+　  ├─str
+　  └─xa
+
+
+DTL-D2350 Technical Reference Ver.4.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+当ディスクには、ドキュメント、セミナー資料、SCE-NET 情報が含まれており
+ます。詳細につきましては、Technical Reference CD-ROM の 1st_read.txt を
+参照ください。
+
+┌─1st_read.txt	ドキュメント CD 用のディレクトリ全体説明
+├─web			SCE-NET 情報
+│  ├─html
+│  └─readme.txt
+├─psxdoc
+│  ├─doc	        プログラマツールドキュメント
+│  ├─docchg_e.txt	ドキュメントに関する前バージョンからの変更 (English)
+│  ├─docchg_j.txt	ドキュメントに関する前バージョンからの変更 (Japanese)
+│  ├─wdview		Microsoft WORD Viewer
+│  └─xlview		Microsoft EXCEL Viewer
+├─pdadoc
+│  └─doc		PDAドキュメント・ARMドキュメント
+└─seminar		開発セミナーテキスト・サンプルソース
+    ├─advanced	中・上級コース
+    ├─beginner	初級コース
+    ├─bsc_arch	Basic Architecture コース
+    └─ppview		Microsoft PowerPoint Viewer
+
+< 使用許諾、制限 >
+このCD-ROMの使用許諾、使用制限などは貴社と当社((株)ソニー・コンピュータ
+エンタテインメント）との間に締結されている契約に準じます。
+
+< 商標等に関する注意書き >
+本書およびCD-ROMに収録されている商品名は、各社の商標および登録商標です。

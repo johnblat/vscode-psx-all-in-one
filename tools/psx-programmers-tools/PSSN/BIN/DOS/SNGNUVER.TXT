@@ -1,0 +1,46 @@
+GNU Compilers Build Versions History
+------------------------------------
+(this version: 5.6.97)
+(contact gil@snsys.com to report problems)
+
+
+2.7.2.SN32.3.7.0003     9.6.97
+Regular release build.
+Fixes:
+10. CCCP.C : proper support for Kanji characters
+
+
+2.7.2.SN32.3.7.0002     14.5.97         
+First of the new regular fortnightly builds
+Fixes:
+8. N64.H : N64 build should not insert call to __main if main() defined
+9. UNROLL.C : parameterise max. number of insns allowed in an unrolled loop
+
+
+2.7.2.SN32.3.7.0001     10.2.97         
+First build with a build number - first application of test suite
+Fixes:
+1. MIPS.C : temporary files not correctly deleted
+2. CCCP.C : preprocessor should output makefile rules with object files suffixed with .OBJ rather than .O
+3. MIPS.C : temporary files should be created in the directory TMPDIR
+4. CCCP.C : #include can't specify a drive letter
+5. CCCP.C : #include can't use either a forward or back slash in paths
+6. SDBOUT.C : should use 6 dimensions for array debug output, not 4
+
+
+
+Pre-'build' versions
+--------------------
+2.7.2.SN32.3.7  (10.2.97)
+Unified source trees and version numbers for all 32-bit builds.
+
+2.7.2.SN32.3.4  (13.1.97)
+Changed SDB_MAX_DIM to 6 in SDBOUT.C to fix 5/6-d array debug output.
+
+2.7.2.SN32.3.3	(28.11.96)
+Rebuilt with MIPS fix for deleting temporary files used in GP optimisation (add -D__MSDOS__ to CFLAGS).
+
+2.7.2.SN32.3.2	(?)
+First working version
+
+

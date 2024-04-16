@@ -1,0 +1,65 @@
+Bugs reported and fixed for GNU compilers
+-----------------------------------------
+
+10. CCCP.C : proper support for Kanji characters
+Reported: 2.6.97
+By: Yoshi
+Fixed: SN32.3.7.0003
+
+
+9. UNROLL.C : parameterise max. number of insns allowed in an unrolled loop
+Reported: 18.4.97
+By: Stefan Hopper @ Probe
+Fixed: SN32.3.7.0002
+
+
+8. N64.H : N64 build should not output a call to __main if main() defined
+Reported: 22.4.97
+By: Martin
+Fixed: SN32.3.7.0002
+
+
+7. CCCP.C : should use an output file rather than file redirection for errors
+Reported: ?
+By: Martin
+Fixed: not yet
+
+
+6. SDBOUT.C : should use 6 dimensions for array debug output, not 4
+Reported: ?
+By: many!
+Fixed: SN32.3.7.0001
+
+
+5. CCCP.C : #include can't use either a forward or back slash in paths
+Reported: ?
+By: many!
+Fixed: SN32.3.7.0001
+
+
+4. CCCP.C : #include can't specify a drive letter
+Reported: ?
+By: many!
+Fixed: SN32.3.7.0001
+
+
+3. MIPS.C : temporary files should be created in the directory TMPDIR
+Reported: ?
+By: many!
+Fixed: SN32.3.7.0001
+
+
+2. CCCP.C : preprocessor should output makefile rules with object files suffixed with .OBJ rather than .O
+Reported: ?
+By: Carl Muller
+Fixed: SN32.3.7.0001
+
+
+1. MIPS.C : temporary files not correctly deleted
+Reported: ?
+By: many!
+Fixed: SN32.3.7.0001
+
+
+
+Contact gil@snsys.com to report a GNU compiler bug.

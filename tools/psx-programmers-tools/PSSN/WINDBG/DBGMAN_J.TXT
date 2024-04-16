@@ -1,0 +1,336 @@
+$PSDocId: Document Release 1.0 for Run-time Library Release 4.4$
+
+
+              SN Debugger for Windows ver.2.4 日本語簡易マニュアル
+
+
+このファイルは、SN Debugger for Windows で、一通りのデバッグ作業が行なえるよう
+その使用法を簡単に説明するものです。詳細については付属のヘルプファイル(英語)を
+参照してください。
+
+
+■■ １ ファイルサーバの起動 ■■
+
+  デバッガの起動に先立って、スタートメニューの [プログラム→SN Debugger→SN Fil
+  e Server] を起動します。ターゲットはリブートされ、各種メッセージが表示されま
+  す。
+  サーバを起動しなくともデバッガは使用できますが、なるべく前もってサーバを常駐
+  させておき、リセット／リブートはサーバのメニューから行なう事をお勧めします。
+
+  ・パッチプログラムの自動ダウンロード＆実行（H2000のみ）
+    従来H2000では、ユーザプログラムの実行に先立って、パッチプログラム patchj.
+    cpe を実行する必要がありました。
+    SN Debugger for Windows 環境では、H2000の起動及びリブート時に snpatchj.cpe
+    が自動的に実行されますので、ユーザがパッチを当てる必要はありません。
+
+  ・リブート／リセット
+    メニューの [Command→Reboot Target/Reset Target] により、ターゲットのリブ
+    ート／リセットが行なえます。
+    (注意)
+    H2000では、リセットすると「パッチを当てる以前の初期状態」に戻ってしまいま
+    す。H2000ではリセットは行わずに、毎回必ずリブートを行うようにしてください。
+
+  ・ターゲット制御機能
+    メニューの [Command→Run CPE] で.CPEファイルの実行、 [Command→Halt] で中
+    断、 [Command→Start] で再開など、サーバ単体でも簡単な制御が行なえます。
+
+  ・File Serving Dir について
+    PCread()等を使用する際のカレントとなるディレクトリです。メニューの [Command
+    →File Serving Directory→New Directory] で任意に設定する事ができます。
+
+
+■■ ２ デバッガの起動 ■■
+
+  スタートメニューの [プログラム→SN Debugger→SN Debugger] を起動します。
+  最初に「Project Files」のダイアログが現れます。
+
+● プロジェクトを作る
+
+  (1) デバッグしたい.cpeファイルを選択して、青い矢印をクリックしてください。
+      ２つのチェックボックスが現れます。
+        [Download when Project is started]
+          プロジェクトオープン時にcpeをダウンロードする
+        [Run after files is downloaded] 
+          プロジェクトオープン時にcpeをダウンロードし、さらにrunする
+      通常は上のチェックボックスだけをチェックしておく事をお勧めします。
+
+  (2) 次に.symファイルも同様に選択してください。
+      （注意）
+      DOS版デバッガ dbugpsx 同様、デバッグ情報が含まれる.symファイルでないと、
+      後述のSource, Localsウィンドウは使用できません。
+
+  (3) プロジェクトオープン時に読み込ませたいバイナリファイル(.bin)がある場合は
+      同様に選択してください。
+
+  (4) 必要なファイルを全て選択し終えたら [Close] をクリックしてください。
+
+  (5) 「一旦セーブしてReopen」の要求ダイアログが出る→Yesを選択
+
+  (6) セーブするかどうかのダイアログが出る→Yesを選択
+      ファイル名を指定して、プロジェクトファイルをセーブしてください。拡張子は
+      .psyになります。
+
+  (7) Open Projectのダイアログが出る→Yesを選択
+      Registers, Disassembly and Memoryの２つのウィンドウが開きます。
+
+  (8) これでデバッグに必要な最低限の環境は整いました。
+      ここで設定したプロジェクト内容は、メニューの [Project→Files] で確認／ 
+      変更できます。
+
+
+■■ ３ 各ウィンドウを開く ■■
+
+  ウインドウの種類やフォーマットはDOS版と同様のものが用意されています。選択さ
+  れているウィンドウは赤、それ以外は黒で表示されます。
+  選択されているウィンドウの種類によって、ドロップダウンメニューが切り替わりま
+  す。各ウィンドウでの作業は、その殆どがドロップダウンメニューから行なえます。
+  また、カスタマイズ可能なツールバー(アイコン)も用意されています。
+  マウスの右ボタンをクリックすると、そのウィンドウに特化したメニューが
+  現れるようになっています。
+
+● Registerウィンドウ
+
+  最初からオープンされるウィンドウです。Registerウィンドウ上で [マウスの右クリ
+  ック→GTE Register] を選択すると、GTEレジスタも参照できます。
+
+● Disassembleウィンドウ
+
+  最初からオープンされるウィンドウです。dbugpsx と同様のフォーマットです。
+  [Disassembly→Properties] で各種設定が行なえます。
+  ・Follow PC                   カーソルバーがPCと同時に動く ON/OFF
+  ・Respond to Goto Breakpoint  Breakpoint managerでダブルクリックされた位置
+                                にカーソルバーを移動させる ON/OFF
+  ・Centre on PC                常にPCをウィンドウの中央に表示 ON/OFF
+
+● Memoryウィンドウ
+
+  最初からオープンされるウィンドウです。メニューのMemoryやマウスの右クリックで
+  各種表示形式が選択できます。
+  [Memory→Anchor] で、任意のアドレスに固定させておく事ができます。
+
+● Sourceウィンドウを開く
+
+  (1) [View→New] で新しいウィンドウを開く
+      ツールバーでも開けます。デフォルトではRegisterになっています。
+
+  (2) 新しいウィンドウが選択状態(赤)のまま [Register→Change Pane→Source]
+      で切り替えてください。ツールバーでも切り替えられます。
+      また、マウスの右ボタンメニューからも切り替える事が可能です。
+
+  (3) [View→Set Font] でフォントを指定
+      デフォルトでは日本語が正しく表示されませんので、ここでフォントを選んで
+      ください。FixedSysの日本語書体などがお勧めです。
+
+● Watchウィンドウを開く
+
+  (1) Sourceウィンドウと同様に切り替えてください。
+
+  (2) シンボルを追加する
+      [Watch→Add Watch] で、Add Expressionダイアログが出ます。
+
+  (3) Symbol Browser を立ち上げて選択する
+      Symbol Group を選んで Browse... でSymbol Browserが起動されます。
+      複数のシンボルを一度まとめて指定したい場合は、CtrlやShiftキーを使って
+      複数選択した後、リターンキーで指定できます（便宜上<Multi 1>と表示され
+      ます）。
+
+  (4) 検索指定する
+      文字列を入力、Completeで、その文字列から始まるむ全てのシンボル名が一覧
+      表示されます。
+
+  (5) ローカルシンボルを追加する
+      [Watch→Add Locals] で、ローカル変数が追加されます。Localsウィンドウと同
+      じ内容です。
+
+● Localsウィンドウを開く
+
+  ローカルシンボルの一覧です。操作方法はWatchウィンドウに準じます。
+
+● Otherウィンドウを開く
+
+  プラグインモジュールをウィンドウ内に起動します。Ver.2.4では３種類選べます。
+  ・CallStack Display   CallStack一覧
+  ・Breakpoint Manager  ブレークポイント一覧
+  ・Symbol Browser      シンボル一覧
+
+● View環境を保存する
+
+  メニューの [View→Save As] で現在のView環境を.pqvファイルとしてセーブできま
+  す。セーブした.pqvファイルは [View→Open] で読み込む事ができます。
+  .psvファイルは.psyファイルからView環境の部分を切り離したもので、.pqvファイル
+  は.psyファイルとは独立に扱えます。なお、デバッガ終了時には.psyファイルがセー
+  ブされます。
+
+
+■■ ４ プログラムの実行・デバッグ ■■
+
+● 実行する
+
+  メニューのDebugで各種操作が行なえますが、殆どがファンクションキーに割り当て
+  られています。F9で実行、ESCで停止、F7でステップ等、dbugpsx と同様の操作が行
+  なえます。新しい機能としては、関数を抜けるまで実行するステップアウト(F12)な
+  どがあります。
+
+● ブレークポイントを設定する
+
+  メニューの [Source(又はDisassembly)→Toggle Breakpoint] で設定します。DOS版同
+  様ダブルクリックでも設定できます。Edit Breakpointで細かい設定が可能です。
+  OtherウィンドウでBreakpoint Managerを立ち上げておくと、各pointの状態が常時
+  分かるので便利です。
+  また [Debug→Hardware Breakpoint] でハードウェアブレークポイントも設定できま
+  す。
+
+● CallStackを参照する
+
+  [Debug→Increase Stack Level/Decrease Stack Level] で、CallStackが参照できま
+  す。子ルーチンがどこから呼ばれたか知りたい時や、親ルーチンのローカル変数を
+  参照したい時などに便利です。
+  OtherウィンドウでCallStack Displayを立ち上げておく事もできます。
+
+● Reopen と Restore の違い
+
+  [Project→Reopen] は、現在の環境(ウィンドウやBreakpointの状態)はそのままで、
+  Projectに登録されたFilesを再度openします。Reopen時には.psyファイルが更新され
+  ます。
+  [Project→Restore] は、最後にセーブされたpsyファイルを再度オープンします。つ
+  まりRestoreでは、現在の環境が保持されすに消えてしまうので注意して下さい。
+
+● ステップモード
+
+  デフォルトのステップ実行のモードは以下のようになっています。
+  ・Sourceウィンドウ     ：   一行単位でのステップ
+  ・Disassemblyウィンドウ：   一命令単位でのステップ
+  [Debug→Toggle Stepping Mode] で、モードを変える事ができます。例えば
+  Disassemblyウィンドウで、ソース１行単位でのステップ実行が可能になります。
+
+● プロジェクトオープン時のPC位置
+
+   プロジェクトオープン時のプログラムカウンタの位置は、スタートアップルーチンの
+   先頭（main関数より前）である __SN_ENTRY_POINT になります。
+   main関数の先頭からステップ操作を行いたい場合などは、[Debug→Run to Main] で
+   一旦mainの先頭まで実行してください。
+   また、[Tools→Settings] の [Run to Main] をチェックすると、毎回mainまで自動
+   実行するように設定する事ができます。
+
+
+■■ ５ コピー／スペシャルペースト ■■
+
+  デバッガは、内部にクリップボード(4バイトのバッファ)を持っており、コピー＆
+  ペーストを効果的に利用する事で円滑に作業が行なえます。
+  メニューからもできますが、マウス右クリックが便利です。
+
+  (例) Sourceウィンドウの、カーソル行からの逆アセンブルを見たい
+       1. Sourceウィンドウで [マウス右クリック→Copy]
+       2. Disassemblyウィンドウで [マウス右クリック→Special Paste→Goto Value]
+
+ （例）Memoryウィンドウの、カーソル箇所の内容をWatchに追加したい
+       1. Memoryウィンドウで [マウス右クリック→Copy]
+       2. Watchウィンドウで [マウス右クリック→Special Paste→Add as watch]
+
+  (例) Watchウィンドウの、カーソル行シンボル付近のメモリ内容を見たい
+       1. Watchウィンドウで [マウス右クリック→Copy]
+       2. Memoryウィンドウで [マウス右クリック→Special Paste→Goto Address]
+
+  クリップボードには、値(value)として保持するか、アドレス(address)として保持す
+  るかの２種類の保持方法があります。
+  クリップボードに保持されている内容はデバッガウィンドウの右下部(ステータスバー
+  の右）に表示されます。
+
+  (例) valueとして保持している場合（10進表示）
+       Clipboard: -2147414168
+
+  (例) addressとして保持している場合（16進表示）
+       Clipboard: *(unsigned long *)0x80010F9C
+
+● コピー
+
+   Source,Disassembly,Memory,Watch,Localsウィンドウで使用できます。
+   各ウィンドウにより、値(value)としてコピーされるか、アドレス(address)として
+   コピーされるかの違いがあります。各ウィンドウによる動作を以下に挙げます。
+
+    Source     : カーソル行のアドレスを value としてコピーする
+    Disassembly: カーソル行のアドレスを value としてコピーする
+    Memory     : カーソルがアドレス表示部にあれば、そのアドレスを value と
+                 してコピーする
+                 カーソルがメモリ表示部にあれば、そこのアドレスを address と
+                 してコピーする
+    Watch      : カーソル行のシンボルのアドレスを address としてコピーする
+    Locals     : カーソル行のシンボルのアドレスを address としてコピーする
+
+● スペシャルペースト
+
+   クリップボードの内容が address であれば、そのアドレスの内容が value として
+   使用されます。クリップボードの内容が value の場合は、address として使用す
+   る事は意味がありません。各ウィンドウによる動作を以下に挙げます。
+
+    Source     : Goto Value（value へジャンプ）
+    Disassembly: Goto Value（value へジャンプ
+    Memory     : Goto Value（value へジャンプ）
+                 Goto Address（address へジャンプ）
+    Watch      : Add as Watch（address と value を追加表示）
+                 Assign using Value（そこの内容を value に書き換える）
+    Locals     : Assign using Value（そこの内容を value に書き換える）
+
+
+■■ ６ その他・ツール ■■
+
+● H2500特有の設定
+
+  メニューの [Tools→DTL-H2500 Communications] で、PIO IRQ を有効にしたり、
+  NTSC/PALの切替え操作を行なう事ができます。
+  PIO IRQ を有効にすると、pollhost関数無しでもデバッグできるので便利ですが、
+  その反面 Source, Localsウィンドウが使えない等の制約があります。
+
+● アップロード／ダウンロード
+
+  メニューの [Tools→Upload / Download Memory] で、バイナリファイルをメモリに
+  アップロード、メモリの内容をファイルにダウンロードできます。
+
+● Disassemble 結果をセーブする
+
+  メニューの [Tools→Disassemble Memory] で、指定番地からのDisassemble結果をフ
+  ァイルとしてセーブします。
+
+
+■■ ７ デバッガの終了 ■■
+
+  [Project→Exit] で、終了確認ダイアログが出ます。
+  OKで終了します。
+
+
+■■ ８ デバッグ作業の流れ ■■
+
+おおまかなデバッグ作業の流れの例を挙げておきます。
+
+(1) SN File Server を起動
+(2) SN Debugger for Windows を起動
+(3) SN Debugger for Windows で [Project→Open]、.psyファイルを選択
+    （または .psyファイルをダブルクリック）
+(4) SN Debugger for Windows で、実行・停止・ステップ操作など
+(5) エディタでソース変更
+(6) DOS窓でコンパイル
+(7) SN File Server で [Command→Reboot Target 又は Reset Target]
+(8) SN Debugger for Windows で [Project→Reopen]
+(9) (4)に戻る
+
+
+■■ ９ バグ情報 ■■
+
+● NTで使用する際のビデオモードについて
+
+  NTの起動時に表示されるカラーバーは PAL MODE ですが、その後ファイルサーバや
+  デバッガを立ち上げると NTSC MODE になります。
+  NTSC/PAL の切替えは [Tools→DTL-H2500 Communications] で行う仕様ですが、現在
+  NTでは、この機能が正常に動作しません。
+  NTでビデオモードを変更したい場合は、以下の操作を行なってください。
+
+  (1) レジストリエディタ C:\WINDOWS\REGEDIT.EXE を起動する
+  (2) HKEY_LOCAL_MACHINE\Software\Sn Systems\Dex を開く
+  (3) Pal Mode をダブルクリックする
+  (4) NTSC MODE にしたい場合は [値のデータ] を 0 に、
+      PAL MODE にしたい場合は [値のデータ] を 1 にセットして [OK]
+  (5) SN File Server で [Command→Reboot Target 又は Reset Target]
+
+
+
+以上

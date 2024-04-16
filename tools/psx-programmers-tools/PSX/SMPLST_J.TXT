@@ -1,0 +1,626 @@
+$PSDocId: Document Release 1.0 for Run-time Library Release 4.4$
+                                                                Oct 1998
+
+                                          PlayStation(R) Programmer Tool
+                                             Runtime Library Release 4.4
+
+                          			          サンプルの構成
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                      Copyright(C) 1998 Sony Computer Entertainment Inc.
+                                                    All Rights Reserved.
+────────────────────────────────────
+
+サンプルディレクトリ構成
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(*)印のサンプルは今回追加されたディレクトリです
+
+psx\sample\
+├─cd
+│  ├─earth
+│  ├─movie
+│  ├─str3d
+│  └─tuto
+├─cmplr
+│  └─scratch
+├─ds
+│  └─tuto
+├─etc
+│  ├─card
+│  ├─comb
+│  │  ├─tuto1
+│  │  ├─tuto2
+│  │  └─tuto3
+│  ├─gun
+│  ├─mcgui		(*)
+│  │  └─tuto0	(*)
+│  ├─mcrd
+│  │  ├─tuto0
+│  │  ├─tuto1
+│  │  └─tuto2
+│  ├─mouse
+│  ├─sio
+│  │  ├─tuto1
+│  │  └─tuto2
+│  ├─tap
+│  └─thread
+├─graphics
+│  ├─basic
+│  ├─bg
+│  │  ├─bgsample
+│  │  └─fix32
+│  ├─clutfog
+│  ├─divide
+│  │  ├─active
+│  │  └─clip
+│  ├─dmpsx
+│  ├─fballs
+│  ├─gsgpu
+│  ├─hmd
+│  │  ├─anim
+│  │  ├─basic
+│  │  ├─common
+│  │  └─mime
+│  ├─jimen
+│  ├─mesh
+│  │  ├─qmesh
+│  │  ├─rmesh
+│  │  └─smesh
+│  ├─mime
+│  │  ├─joint
+│  │  ├─vertex
+│  │  └─vjmime
+│  ├─mipmap
+│  ├─misc
+│  │  ├─60frame
+│  │  └─getode
+│  ├─oden
+│  ├─phong
+│  ├─ppm
+│  ├─rotate
+│  │  ├─arot
+│  │  ├─intrpol
+│  │  └─mat2rot
+│  ├─rotmat
+│  ├─screen
+│  ├─shadow
+│  ├─texaddr
+│  │  └─wave
+│  ├─tmdpmd
+│  ├─tmdview
+│  │  ├─lowlevel
+│  │  ├─rcube
+│  │  ├─shuttle
+│  │  ├─tmdview3
+│  │  ├─tmdview4
+│  │  └─tmdview5
+│  ├─tod
+│  │  ├─janken
+│  │  └─todview
+│  ├─trr
+│  ├─tuto
+│  ├─walk
+│  └─zimen
+├─kanji
+│  ├─asc2sjis
+│  ├─chinese		(*)
+│  │  ├─fontdata	(*)
+│  │  └─viewer	(*)
+│  ├─fontdata
+│  ├─kanjidiv
+│  ├─kanjifnt
+│  └─sjiscode
+├─math
+│  └─tree
+├─mcx			(*)
+│  └─primitiv	(*)
+├─module
+│  ├─cdexec
+│  ├─execmenu
+│  │  ├─anim
+│  │  ├─balls
+│  │  └─rcube
+│  ├─menu
+│  └─overmenu
+├─old
+│  └─etc
+│  　  ├─card
+│  　  │  ├─doc
+│  　  │  ├─lib
+│  　  │  ├─makecard
+│  　  │  └─max
+│  　  └─cman
+├─pad
+│  ├─anlgctrl
+│  └─dungeon
+├─press
+│  └─tuto
+│  　  └─msiro
+└─sound
+　  ├─3deffect
+　  ├─balls
+　  ├─basic
+　  ├─cdvol
+　  ├─mutual
+　  ├─simple
+　  ├─stream
+　  ├─tuto
+　  └─xse
+
+
+データディレクトリ構成
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(*)印のサンプルは今回追加されたディレクトリです
+
+psx\data\
+├─bgd
+├─cel
+├─hmd
+│  └─scei
+│  　  ├─anim
+│  　  │  ├─balloon
+│  　  │  ├─cube0
+│  　  │  ├─domes
+│  　  │  │  └─lw3d
+│  　  │  ├─domesc
+│  　  │  ├─interp
+│  　  │  │  ├─3dstudio
+│  　  │  │  └─nworld
+│  　  │  ├─ring		(*)
+│  　  │  ├─rots
+│  　  │  ├─snake
+│  　  │  ├─tri3
+│  　  │  ├─tri4
+│  　  │  └─ufo
+│  　  ├─basic
+│  　  │  └─dice
+│  　  ├─comb
+│  　  │  ├─ammonite
+│  　  │  ├─tofu
+│  　  │  └─walkrun		(*)
+│  　  ├─envmap
+│  　  │  └─texture
+│  　  ├─equip
+│  　  │  ├─pp
+│  　  │  └─snowman
+│  　  ├─mime
+│  　  │  ├─legs
+│  　  │  ├─twinp
+│  　  │  └─twister
+│  　  └─tuto
+│  　  　  └─pyramid
+├─pmd
+├─sep
+├─seq
+├─tim
+├─tmd
+├─tod
+├─vab
+└─vag
+
+
+サンプル一覧（アルファベット順）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+.\cd\earth: アース <libcd>
+        球面に動画を張り付ける例
+
+.\cd\movie: ムービー <libcd>
+        ストリーミングを使った動画のサンプル群
+        tuto0: 最もシンプルなストリーミングを使った動画のサンプル
+        tuto1: 16 の倍数でない大きさの動画を再生するサンプル
+        tuto2: オンメモリストリーミングサンプル
+        tuto3: フレーム落ちを抑制したサンプル 
+
+.\cd\str3d: コンビ <libcd>
+        ストリーミング動画と 3D モデルの表示とを組み合わせたサンプル
+
+.\cd\tuto: CD チュートリアル <libcd> 
+        CD-ROM 段階的チュートリアル
+        tuto0: 最も単純な CD-Player (ポーリング版)
+        tuto1: 最も単純な CD-Player (コールバック版)
+        tuto2: CD-DA の任意の 2 点間をリピートする
+        tuto3: CD-DA の 2 トラック間を割り込みを使用してリピートする
+        tuto4: CdControlF を使用した高速処理
+        tuto5: CD-XA の任意の 2 点間をリピートする
+        tuto6: マルチチャンネル ADPCM/ADPCM データのリピート
+        tuto7: バックグラウンド CDRead の実験 
+        tuto8: 1 つのファイルを複数回に分割してリードする 
+        tuto9: プログラムのロードと実行
+        tuto10: ファイル単位の CD-ROM アクセス 
+        tuto11: CD の種類を調べる 
+
+.\cmplr\scratch: スクラッチパッドエリア使用サンプル
+        スクラッチパッドエリアにデータを置き、3 種類のアクセス方法で
+        処理速度の違いを見る
+
+.\ds\tuto: DS チュートリアル <libds> 
+        CD-ROM 段階的チュートリアル
+        tuto0 - tuto11: libcd のチュートリアル sample\cd\tuto を libds 
+                用に書き直したもの
+        tuto12: 先行シークで DA を再生した場合の曲のスタートまでの時間
+                を、そうでない場合と比較したサンプル
+        tuto13: 先行シークで XA を再生した場合の曲のスタートまでの時間
+                を、そうでない場合と比較したサンプル
+        tuto14: 複数のファイルを連続でリードする場合と、一つ一つシーク
+                してリードした場合の、要する時間を比較するサンプル
+
+.\etc\card: メモリーカードアクセスサンプル
+        メモリーカードのファイルの状態監視、フォーマット、ファイルの生
+        成などのユーティリティ
+
+.\etc\comb: 対戦ケーブルサンプル
+        対戦ケーブルで接続された 2 台のマシンでデータを送受信するサン
+	プル
+	tuto1: 垂直同期を合わせながら同期通信を行うサンプル
+	tuto2: 同期 write と非同期 read のサンプル
+	tuto3: 非同期 write と非同期 read のサンプル
+
+.\etc\gun: ガンコントローラのサンプル
+        libgunの関数を使用して、ガンコントローラが向いている TV 画面の
+        位置を検出して、画面上に表示するプログラム
+
+.\etc\mcgui\tuto0: メモリカード GUI モジュールチュートリアル
+	メモリーカード GUI モジュールを使ったサンプル
+
+.\etc\mcrd: メモリカードのサンプル
+	tuto0: 同期処理サンプル,アイコン生成プログラム
+	tuto1: 非同期処理サンプル 1
+               メモリカードに収められているファイルリストを表示
+	tuto2: 非同期処理サンプル 2
+               スロット 1 のファイルをスロット 2 に選択コピーする
+
+.\etc\mouse: マウスコントロールサンプル
+        マウスによるカーソル移動とボタンを押した場合の処理のサンプル
+
+.\etc\sio\tuto1: SIO ドライバサンプル 1
+        デバッグステーションと PC を H3050 で接続して PC からの入力を
+        エコーバックするサンプル 
+
+.\etc\sio\tuto2\: SIO ドライバサンプル 2
+        デバッグステーションと PC を H3050 で接続して PC からの入力を
+        エコーバックするサンプル
+
+.\etc\tap: マルチタップサンプル
+
+.\etc\thread: スレッドサンプル
+        次の VSync 割り込みが来るまで、別の作業を行う
+
+.\graphics\basic: <libgpu>
+	グラフィックスの基本機能のデモンストレーション
+	各プログラムはメニューから起動される
+	2d: 曲面のテクスチャマッピング
+            3 次元上の曲面に 512x256 のテクスチャパターンをマッピングする
+            select を押すと粉々になるおまけつき   
+	balls: ボールズ
+               16x16 のスプライトを多数表示する
+               FntPrint, KanjiFntPrint, VSyncCallback(),VSync() の使い方
+               も示す
+	diffuse: ディフュージョン <libgte> 
+	         16x16 のボールか、4 角形ポリゴンをワールド座標で原点から
+	         拡散させる。GTE の性能デモ
+        mat: まっちゃん(Matchang)
+             立て看板スプライト＋スプライトアニメーション
+             まっちゃん(Matchang) のアニメーションが 3D に埋め込まれたもの
+        rgb24: RGB24 <libgpu>
+               24bit モードのデモ
+               StoreImage(), LoadImage(), MoveImage() の例を示す
+
+.\graphics\bg: libgs の BG 描画関数のサンプル <libgs>
+        スプライトエディタで作った TIM/CEL/BGD ファイルがそのまま読めます
+        bgsample: BG 面の描画関数で BG データを表示
+        fix32:    BG 面の高速描画関数で BG データを表示
+
+.\graphics\clutfog: clut を使った fog のサンプル
+        tuto0: フレームごとに clut を生成して vram に転送する方式です
+        tuto1: 数個の clut を vram に置いておき、fog の具合によって
+               適宜切替えて使う方式です
+        tuto2: DR_MOVE を使って CLUT を変更する方式
+               libgs による描画にもそのまま適用できます
+	tuto3: DR_LOAD を使ったテクスチャデプスキューイングの例です 
+
+.\graphics\data: 共有データ
+
+.\graphics\divide: ポリゴン自動分割 <libgte>
+        clip: テクスチャの歪みを防ぐための Divide 関数の使用例
+              readme.txt には RCpoly 関数の使用例もあります
+        active: DM(Direct Mapping)を使った active sub - divideのサンプル
+            すき間問題・ソーティングZを 重心でなく 最大値でする
+            というトピックも盛り込まれています
+
+.\graphics\dmpsx: DMPSX <libgte>
+        DMPSXによる高速化サンプルプログラム
+
+.\graphics\fballs: Fast Balls <libgpu> 
+        balls をもとにした、gpu の描画を高速化するサンプル
+
+.\graphics\gsgpu: GS と GPU <libgpu,libgs>
+        libgs と libgte を同時につかったサンプル
+        tuto0: libgs と AddPrim() を使用
+        tuto1: DrawOTag()で libgs のパケットを描画する
+
+.\graphics\hmd: HMD フォーマットのサンプル
+	anim: HMD フォーマットを使用したアニメーション
+		tuto0: 汎用的な HMD アニメーション ビューワ
+		tuto1: Realtime Motion Switch #1
+                       SIDによるインタラクラクティブアニメーション
+		tuto2: Realtime Motion Switch #2
+                       仮想キーフレームによるインタラクラクティブア
+                       ニメーション
+		tuto3: 視点アニメーションを含む汎用的な HMD アニメーショ
+                       ンビューワ
+		animview:    汎用 HMD アニメーション再生サンプル
+        basic: HMD フォーマットを使用したビューワ
+	        tuto0: 汎用的な HMD ビューワ
+                tuto1: 共有ポリゴンを使用した HMD ビューワ
+                tuto2: HMD を使用したシャトルビューワ
+                tuto3: 固定分割を使用した HMD ビューワ
+        mime: HMD でのマイムサンプルプログラム
+	pdriver: プリミティブドライバのサンプルコード
+
+.\graphics\jimen: 歪まないテクスチャーマッピング <libgte> 
+        歪まないテクスチャーマッピング用関数サンプル
+
+.\graphics\mesh: メッシュ <libgte>
+        qmesh: 2 次元 mesh
+		tuto0: QMESH関数の例...スクリーンクリップ
+                tuto1: QMESH関数の例...地形
+        rmesh: RMESH(round mesh)関数の描画モード一覧
+        smesh: strip mesh
+                tuto0: SMESH関数の描画性能
+                tuto1: SMESH関数の描画モード一覧
+                tuto2: 正 20 面体(イコサ)をつくる例
+
+.\graphics\mime: MIMe
+        joint:  階層構造モデルの関節 MIMe アニメーション
+        vertex: ぷよで(MIMe Interactive Animation)
+                GsDOBJ5を用いた"ＭＩＭｅ"の Sample Program 
+                L1,L2,R1,R2ボタンで４つの MIMe パラメータを制御
+                データは十字形の"ぷよで"、法線 MIMe も行なっている
+        vjmime: 階層構造モデルの関節 MIMe アニメーション
+            tuto0: joint-MIMe と vertex-MIMe の両方を用いた内挿のサンプル
+            tuto1: joint-MIMe のみによる内挿のサンプル
+
+.\graphics\mipmap: mipmap サンプル
+
+.\graphics\misc: グラフィック系いろいろ
+        60frame: 30 フレと 60 フレの違いを見るサンプル
+        getode: インターレースモードでの VSync 同期
+
+.\graphics\oden: オーデン <libgs>
+        3 光源をインターラクティブに動かし また 光源色を変化させ
+        リアルタイムでライティングの計算を行なうサンプル
+
+.\graphics\phong: phong シェーディング <libgte>
+
+.\graphics\ppm: 歪まないマッピング (perfect perspective mapping) <libgte>
+
+.\graphics\rotate: 回転サンプル <libgte> 
+        arot: 回転角内挿プログラム 
+        intrpol: 各種の回転の内挿デモ 
+        mat2rot: 回転マトリクスからオイラー角を求める例 
+
+.\graphics\rotmat: RotMatrixとRotMatrix_gteの比較
+
+.\graphics\screen: スクリーン
+        フレームバッファビューア
+        ディスプレイモード、表示環境パラメータの説明用デモ
+
+.\graphics\shadow: シャドウ <libgte>
+        三角形から三角形へのドロップシャドーを計算するプログラムです
+        ちゃんとクリップしているので階段へも影が落とせます
+
+.\graphics\texaddr: テクスチャアドレスモジュレーション
+	wave: テクスチャアドレスをリアルタイムに変更し、疑似環境マップ
+              や、屈折のような効果を出します。
+
+.\graphics\tmdpmd: 標準 3D 描画パケット TMD/PMD データのビューア
+	各プログラムはメニューから起動される
+
+.\graphics\tmdview: TMD ビュー
+        TMD 及び PMD データを用いたサンプル群
+        data: サンプルで使うデータの置かれているディレクトリ
+        lowlevel: 下位関数を使用した TMDビューワー
+	    tuto0: TMD データを解析してポリゴンタイプに応じて、
+                   GsSortObject4J() の下位関数群を呼び出す
+            tuto1: TMD データを解析して、GPU パケットを生成し、オーダリング
+                   テーブルに登録する
+            tuto2: TMD データを解析して、GPU パケットを生成しオーダリング
+                   テーブルに登録する(スキマ問題対応版)
+            tuto3: TMD データを解析して、GPU パケットを生成しオーダリング
+                   テーブルに登録する(mipmap版)
+        rcube: 回るキューブ
+                3D の各種エフェクトのサンプル
+        shuttle: シャトル
+                スペースシャトルのモデルを使った 階層座標系のサンプル
+                シャトルのハッチ および シャトル内の衛星 を シャトル本体の
+                子座標にしてハッチ開閉等のアニメーションを行なう
+        tmdview3: GsDOBJ3 を用いた PMD データの 最もシンプルな表示プログラム
+            tuto0: 最も simple な GsDOBJ3 ビューワー
+        tmdview4: GsDOBJ2 を用いた TMD データの 最もシンプルな表示プログラム
+            tuto0: 最も simple な GsDOBJ2 ビューワー
+            tuto1: tuto0.c を GsSortObject4J() を使って書き換えたサンプル
+            tuto2: 能動的自動分割を行なう
+            tuto3: GsDOBJ2 を使った スプリット画面のサンプル
+            tuto4: GsDOBJ2 を使ったオブジェクトの使い回し及び複数オーダ
+                   リングテーブル
+            tuto5: マルチスクリーン座標系
+            tuto6: tuto0.c をモデルを動かすのではなく 視点を主観的に
+                   動かしたサンプル
+            tuto7: tuto1.c を GsSortObject4J() を使って書き換え、GsDOBJ2の
+                    マテリアル減衰に対応した下位関数を登録して使用する
+        tmdview5: GsDOBJ5 を用いた TMD データの 表示プログラム
+            tuto0: GsDOBJ5 を用いた TMD データの 最もシンプルな表示プログラム
+            tuto1: スプリット画面のサンプル
+            tuto2: オブジェクトの使い回し および 複数OT
+            tuto3: GsDOBJ5 のアトリビュートによる自動分割
+            tuto4: マルチスクリーン座標系
+            tuto5: GsSortObject5J を使って書き換えたサンプル
+            tuto6: tuto0.c をモデルを動かすのではなく 視点を主観的に
+                   動かしたサンプル 
+
+.\graphics\tod: tod によるアニメーション
+        janken: 複数の tod のインタラクティブなアニメーション
+        todview: シンプルなアニメーション
+
+.\graphics\trr: TransRot 系関数のサンプル <libgte>
+        スキマを解消するための関数 TransRot... のサンプル
+
+.\graphics\tuto: チュートリアル <libgpu>
+        段階的チュートリアル
+        tuto0: スプライトを表示する
+        tuto1: オーダリングテーブルを使用して表示優先順位を決定
+        tuto2: libgte 関数を使用た回転・拡大の簡単な例
+        tuto3: 簡単な 3 次元物体 (cube) を表示する
+        tuto4: tuto3 に光源計算機能を加える
+        tuto5: tuto3 にテクスチャを加える
+        tuto6: tuto3 にフォグ効果を加える
+        tuto7: ローカル座標系を用いて複数のオブジェクトを表示する
+        tuto8: 横方向のみの 1D スクロール BG
+        tuto9: 上下左右にスクロールするセルタイプ BG
+        tuto10: 3 次元セルタイプ BG（バードビュー）
+        tuto11: 疑似モザイクを使用したセルタイプ BG
+        tuto12: 疑似ラインスクロール 
+        tuto13: マルチウィンドウ 
+
+.\graphics\walk: ポリゴンに沿って歩くプログラムのサンプル <libgte>
+        ポリゴンでできた物体 1 の上を他の物体 2 が歩き回らせることが可能
+        物体 1 はどんな形でも可。物体 2 は物体 1 の法線に合わせて向きを変
+	える
+
+.\graphics\zimen: 地面
+        無限平面を表示するプログラム群
+        tuto0: 動的プリミティブ分割(dmpsx使用)
+        tuto1: 基本的な視野クリップ
+        tuto2: 高さなしメッシュ型地面
+        tuto3: 高さなしラップラウンド無視メッシュ型地面
+        tuto4: 動的分割を使用したメッシュ地面
+        tuto5: CLUT FOGを使った地面のサンプル（Gs版）
+
+.\kanji\asc2sjis: コード変換 
+        ASCIIコードからShift-JISコードへの変換
+
+.\kanji\chinese\fontdata: 中国語フォントデータ
+	中国語フォントデータ
+	15dot と 8dot があり、15dot には繁体字と簡体字の 2 種類がある
+
+.\kanji\chinese\viewer: 中国語コードビューアプログラム
+	中国語フォントデータのビューア
+	メモリ上にダウンロードされた中国語フォントを一覧することができる
+
+.\kanji\fontdata: フォントデータ
+        サイズと種類毎のフォントデータ
+                11/13/15ドット
+                非漢字/第１水準/第２水準/縦書き/半角
+        コード変換テーブル
+
+.\kanji\kanjidiv: 文字データ切り出しコマンド
+        文字単位でフォントデータからイメージデータを切り出す
+        コマンドと、切り出したイメージデータのビューア
+
+.\kanji\kanjifnt: フォントデータ一括利用
+        フォントデータをサイズ単位でまとめて利用するサンプル
+
+.\kanji\sjiscode: 漢字コードビューア
+        内蔵フォントの Shift-JIS Code を一覧することができる
+
+.\math\tree: 数学ライブラリ使用サンプル
+        三角関数を用いて樹木曲線を描く
+
+.\mcx\primitiv: PDA(libmcx) を使用したサンプル
+	PDA ライブラリにある処理登録関数の機能を確かめることができる
+
+.\module\cdexec: CD-ROM/Emulatorからの起動ユーティリティ
+        H2000 において、patch した状態で CD-ROM/Emulator から起動させ
+        る場合に使う。`resetps 0'の代替モジュール。
+
+.\module\execmenu: EXECサンプル
+        メニューから BALLS,RCUBE,ANIM を起動する。
+          LoadExec() により起動
+          メモリの空き領域に読み込んだ後 Exec() で起動の 2 種類の例を挙げ
+	  ている。
+
+.\module\menu: 実行ファイルを読み込む、サンプルプログラムビューア
+        サンプルの実行ファイルをメニュー画面から起動する
+        このビューアで実行できるプログラムは none3.obj をリンクした、EXE 
+        ファイルで、menu.lst にあらかじめ登録しておく必要がある
+
+.\module\overmenu: オーバレイサンプル
+        メニューから BALLS,RCUBE,ANIM を起動する
+        音楽を鳴らしたまま、3 つの BIN ファイルを読み代えて実行する
+
+.\pad\anlgctrl: コントローラライブラリサンプル <libpad>
+	２種類のアクチュエータ（振動子）を動作させたり、ロック／ロック解除を
+	行うことが出来ます。またコントローラのアクチュエータ情報の
+	問い合わせ機能を使ってアクチュエータのプリミティブを調べ画面上に
+	表示します。
+	ライブラリに追加されたコントローラとの通信中断／再開を PlayStation
+	本体のポートごとに設定する機能も使っています。
+
+.\pad\dungeon: コントローラライブラリサンプル <libpad>
+	コントローラのアナログスティック操作により、迷路内を移動する
+	サンプルコンテンツです。アクチュエータ（振動子）によって、移動ス
+	ピードや衝撃などを表現します。
+
+.\press\tuto: チュートリアル <libpress>
+        MDEC 段階的チュートリアル
+        tuto1: 単純な VLC デコードと MDEC オンメモリデコード
+        tuto2: LoadImage() と、DecDCTout をインターリーブ
+        tuto3: 単純な動画の再生（フレームダブルバッファ付き）
+        tuto4: コールバックの実現
+        tuto5: LoadImage() と pDecDCTout() をインターリーブ
+        tuto6: バックグラウンド動画の再生
+        tuto7: 細かい設定を変更する 
+
+.\sound\3deffect: 3D 効果音
+	単発音に 3D 効果をつけて発音する
+
+.\sound\balls: サウンドとグラフィックの組み合わせ
+        サウンドとグラフィックの組み合わせ例
+
+.\sound\basic: 基本演奏その 1
+        SEQ/SEP データアクセス関数の使用例
+
+.\sound\cdvol: SPU デコードデータの読み込みのサンプル <libspu>
+        CD で演奏されている曲を SPU から「SPU デコードデータ」として
+        バックグラウンドで読み込み、そのボリューム状況をグラフ表示
+        （ピークレベル表示付）させる
+
+.\sound\mutual: 波形データの分割転送のサンプル <libsnd>
+        任意のタイミングで CD から波形データを分割してメインメモリに
+        読み込み、さらにそのデータをサウンドバッファに順次分割転送し、
+        そのデータを使用して 2 つの曲を演奏する。
+
+.\sound\simple: 基本演奏その 2
+        simple(main.c) :SEQ データアクセス関数の使用例。SEQ を無限回演
+                        奏する。
+	jump：simple のジャンプテーブル版
+
+        画面には、現在のテンポやボリュームやステータス（play 中，
+        pause 中など）が表示されます。
+        波形データはヘッダ部とボディ部に分割し、分割転送を行なっています。
+
+.\sound\stream: SPU ストリーミング用サンプルプログラム <libspu>
+        tuto1: バックグラウンドが balls 
+        tuto2: バックグラウンドが movie 
+
+        基本サウンドライブラリに含まれる SPU ストリーミングライブラリ
+        を使用したサンプル 7 チャンネル (ボイス数 14) の SPU ストリー
+	ムをコントロールパッドの操作によって再生/停止を行う。
+
+.\sound\tuto: 基本サウンドライブラリの基本的な利用法のサンプル <libspu>
+        tuto1: ピッチ指定/キーオン/キーオフ
+                コントロールパッドの操作によってさまざまな音程で発音する
+        tuto2: ミュート
+                発音、ミュート ON、ミュート OFF を行う
+        tuto3: SPU 割り込み
+                ピアノ音のデータの中間に割り込みを設定し、ピアノ音を
+                発音して割り込みが起きた時にサイン波を発音する
+        tuto4: ノイズ音源
+                サイン波とノイズをピッチを変化させて発音する
+        tuto5: 波形データの分割転送
+                分割転送を行い、転送後発音する、というのを 2 つの
+                ボイスで交互に行う
+        tuto6: リバーブ
+                ピアノ音を発音させ、それに 9 種類のリバーブを指定する
+
+.\sound\xse: オートエフェクト
+        サウンドユーティリティ関数の使用例

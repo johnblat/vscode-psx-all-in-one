@@ -1,0 +1,118 @@
+$PSDocId: Document Release 1.0 for Run-time Library Release 4.4$
+                                                               Oct. 1998
+
+                                          PlayStation(R) Programmer Tool
+                                             Runtime Library Release 4.4
+
+                          Release 4.3 からのサンプルの変更, 新規追加情報
+                                                          およびバグ情報
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                      Copyright(C) 1998 Sony Computer Entertainment Inc.
+                                                    All Rights Reserved.
+────────────────────────────────────
+
+サンプルバグ情報および使用上の注意
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+< バグ情報 >
+
+- data\hmd\scei\envmap\star09
+- data\hmd\scei\envmap\venus26
+	HMD 環境マップ（βバージョン）のサンプルデータの内、2D 環境マップ
+	を行っているこれらのデータは、HMD -> LAB -> HMD という変換を行っ
+	た場合、正常に変換できません。将来のリリースで修正予定です。
+
+- sample\sound\stream
+	SPU ストリーム実行中に、チャンネルの開始、停止を繰り返すと、再生
+	中の SPU ストリームがループしてしまうことがあります。
+	この不具合は次期リリースで修正予定です。
+
+
+ディレクトリ構成の変更
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- sample\graphics\hmd\pdriver
+	HMD のプリミティブドライバソースコード公開に伴い、削除されました。
+
+
+新規追加
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- sample\kanji\chinese\fontdata
+- sample\kanji\chinese\viewer
+	中国語フォントデータおよび、中国語フォントデータのビューアを追加
+	しました。
+
+- sample\mcx\primitiv
+	PDA ライブラリ(libmcx)の各関数の入出力情報を視覚的に確認することが
+	できるサンプルを追加しました。
+
+- sample\etc\mcgui\tuto0
+	メモリーカード GUI モジュールを使用したサンプルを追加しました。
+
+- data\hmd\scei\anim\ring
+	HMD の新規サンプルデータ ring を追加しました。このデータには、ほと
+	んどすべてのプリミティブタイプが含まれています。
+
+- data\hmd\scei\comb\walkrun
+	HMD の新規サンプルデータ walkrun を追加しました。汎用アニメーション
+	を用いた、自動化関節 MIMe です。
+
+
+既存サンプルの改良,変更,修正
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- sample\etc\card
+	card.c において、メモリーカードにセーブするファイルの文書名	
+	(HEAD.Title) が文字化けしていたのを修正しました。
+
+- sample\etc\comb\tuto3
+	remote.c 内で、本来クリティカルセクションで呼ぶべき OpenEvent() を
+	クリティカルセクション外で実行していたのを修正しました。
+
+- sample\cd\tuto
+- sample\ds\tuto
+- sample\module\menu
+	以下のサンプルにおいて、画面上に "Use DTL-S2320" あるいは 
+	"Use DTL-S2310" といったメッセージを表示しないように変更しました。
+
+	sample\cd\tuto\
+		tuto5,tuto6,tuto7,tuto8,tuto9
+	sample\ds\tuto\
+		tuto5,tuto6,tuto7,tuto8,tuto9
+	sample\module\menu\
+		menu.lst, readme_j.txt
+	
+- sample\sound\balls
+	makefile.mak に記述されているダウンロードするデータを、simple.vh 
+	および simple.vb から、sample.vh および sample.vb に変更しました。
+
+- sample\sound\stream
+	tuto1 および tuto2 を sample\module\menu\pcmenu から実行した場合、
+	メニューに戻ってこれなくなるという不具合を修正しました。
+
+- sample\sound\cdvol
+	このサンプルを sample\module\menu\pcmenu から実行した場合、
+	CD-ROM の 2 曲目から再生するように変更しました。
+
+- sample\pad\anlgctrl
+- sample\pad\dungeon
+	上記のサンプルが sample\module\menu\pcmenu から実行できるように
+	変更しました。
+
+- sample\graphics\hmd
+	上記のディレクトリに含まれるサンプル全てにおいて、CPU 計算時間の
+	H-count を表示するようにしました。
+
+- sample\module\execmenu
+	子プログラムから親プログラムに復帰することができない場合があると
+	いう不具合を修正しました。
+
+- sample\module\menu
+	新規追加された中国語フォントビューアを、menu から起動できるように
+	変更しました。
+
+- data\hmd\scei\equip\pp
+- data\hmd\scei\equip\snowman
+	上記のディレクトリに含まれる pp_world.hmd および、snowman.hmd 内の
+	World Camera/Light プリミティブヘッダに、本来必要でない COORDINATE
+	へのポインタが含まれていたのを削除しました。

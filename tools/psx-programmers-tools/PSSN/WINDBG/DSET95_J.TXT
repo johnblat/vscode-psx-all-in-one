@@ -1,0 +1,188 @@
+$PSDocId: Document Release 1.0 for Run-time Library Release 4.4$
+
+
+       SN Debugger for Windows ver.2.4 セットアップマニュアル (for Win95)
+
+
+
+このファイルは、Windows95 上で SN Debugger for Windows のセットアップを円滑に
+行って頂くためのマニュアルです。
+
+
+●１ 動作条件
+
+  Windows95 OSR 2
+  DTL-H2000,H2500,H2700をサポートしています。OSR 2 より前の Windows95 をご
+  使用の方は、Microsoft Internet Explorer ver.3.02 以上をインストールして、
+  OSをアップグレードしてからデバッガのセットアップを行って下さい。
+
+
+●２ ディレクトリ構成について
+
+  SN Debugger for Windows を含むSDevTCツールのディレクトリ構成は、以下のように
+  なります。
+
+  （ Windows版デバッガをインストールしたディレクトリ構成 ）
+   \ ━━━ pssn\  ━┳━ bin\ ━┳━ Windowsデバッガ本体、及び関連ツール
+                     ┃          ┃   SN Build Tools for Win32
+                     ┃          ┃   GNU Compiler for Win32
+                     ┃          ┣━ dos\ (SN Build Tools for DOS)
+                     ┃          ┃        (GNU Compiler for DOS)
+                     ┃          ┣━ flash25\ (H2500ファームウェア)
+                     ┃          ┣━ flash27\ (H2700ファームウェア)
+                     ┃          ┗━ prefsmpl\ (preftsectのサンプル）
+                     ┣━ etc\ (その他のファイル)
+                     ┣━ examples\ (PSY-CO サンプル)
+                     ┣━ include\ (SN Include files)
+                     ┣━ lib\ (SN Library files)
+                     ┣━ stubs\ (PSY-CO stubs)
+                     ┣━ system\ ━┳━ 各種DLL、ヘルプファイル
+                     ┃             ┗━ PLUGINS\ (プラグインモジュール)
+                     ┣━ windbg\ (Debugger for Windows インストールパッケージ)
+                     ┗━ gnusrc\ (GCC 2.8.1 ソース)
+
+
+●３ インストール前の準備
+
+  (1) 現在の環境を保存する
+      \pssn,\compilerのディレクトリ名を変更するなどして、現在の環境を保存して
+      ください。
+      > ren pssn pssn_old
+      > ren compiler compiler_old
+
+  (2) \pssn ディレクトリ以下を HDD にコピーしてください。但し \pssn\gnusrc, 
+      \pssn\windbg は特にコピーする必要はありません。
+      > xcopy e:\pssn c:\pssn /S
+
+  (3) H2500,H2700をご使用の場合：
+      デバッガの機能をフルに活用するためには、ファームウェアをアップグレードす
+      る必要があります。最新のファームウェアは、\pssn\bin\flash25, \pssn\bin\fl
+      ash27 に収められています。
+      > cd \pssn\bin\flash25
+      > flash.bat
+
+
+●４ インストール
+
+  (1) \pssn\windbg\Psx1604.EXE を起動して下さい。
+
+  (2) 各ツールの格納先と、使用するハードウェアを指定します。格納先はデフォルト
+      でc:\pssn以下になっています。
+      ３つのチェックボックスがONになっていますが、SN Build Tools 及び GNU C
+      Compiler の最新モジュールは、PlayStationライブラリディスク又はSCE-NETで
+      配布していますので、そちらを使用する事をお勧めします。
+      よってここでは SN Debugger のみをインストールします。SN Build Tools と 
+      Gnu C Compiler のチェックは外してください。
+
+        （デフォルトのディレクトリ）
+        SN Build Tools   c:\pssn\bin  チェックを外す
+        Gnu C Compiler   c:\pssn      チェックを外す
+        SN Debugger      c:\pssn      チェック
+
+  (3) autoexec.bat の変更ダイアログが現れます。Yesを選択すると以下の２行を追加
+      します。特に問題が無ければYesを選択してください。現在のautoexec.batは、
+      autoexec.00Xという名前に変更されて保存されます。
+
+        SET PATH=%PATH%;"C:\pssn\bin"
+        SET SN_PATH=C:\pssn\bin
+
+      autoexec.bat以外の、他のバッチファイルで環境変数を設定したい場合は、
+      ここでNoを選択し、後で自分でバッチファイルを作成してください。
+
+  (4) ファイルがコピーされます。
+
+  (5) ダウンローダに関する情報ダイアログが現れます。（H2500,H2700のみ）
+      ファームウェアのアップグレードを要求する注意文ですが、前節「インストール
+      前の準備」で既にアップグレードを行なっていれば無視して結構です。
+
+  (6) Port Address、IRQ設定ダイアログが現れます。（H2000,H2700のみ）
+      ボードのディップスイッチで設定している値を入力してください。IRQなしの場
+      合は0を指定してください。また、Parallelは変更する必要はありません。
+
+  (7) スタートメニュー追加ダイアログが現れます。
+      特に問題が無ければYesを選択してください。
+
+  (8) sn.iniに関する注意、readmeを読むかどうかのダイアログが現れます。
+      sn.iniのカスタマイズについては後述します。
+
+  (9) システムのリブート要求ダイアログが現れます。
+      特に問題が無ければYesを選択してください。
+
+
+●５ インストールの確認
+
+  (1) H2500をご使用の場合は、[コントロールパネル→システム→デバイスマネージャ
+      →その他のデバイス] をダブルクリックし [Sony PlayStation DTLH2500 PCI 
+      Card] のプロパティを参照して、正常に動作している事を確認してください。
+      もしデバイスが存在しなかった場合は「●１０ H2500ドライバの手動インストー
+      ル」を参照して、手動でドライバをインストールしてください。
+      なお、H2000,H2700 の場合は、この確認作業はは必要ありません。
+
+  (2) スタートメニューの [プログラム→SN Debugger→Check System For Errors] を
+      起動し「Run Diagnostic Check」をクリックして正常に終了する事を確認してく
+      ださい。
+
+  (3) スタートメニューの [プログラム→SN Debugger→SN File Server] を起動しま
+      す。[Command→Ping] で、以下の様に表示される事を確認してください。
+      バージョン番号が違う場合は、ファームウェアが正常に書き込まれていません。
+      （ H2000, H2700の場合 ）
+        unit 0 - R3000       SONY_PSX4.08 is stopped (9)
+      （ H2500の場合 ）
+        unit 0 - R3000       SONY_PSX7.0A is stopped (9)
+
+  (4) DOSプロンプトを立ち上げ、PATHとSN_PATHが正しく設定されているか確認して
+      ください。
+      > set
+         :
+      PATH=C:\;C:\WINDOWS;.....;C:\pssn\bin
+      SN_PATH=c:\pssn\bin
+
+
+●６ sn.ini について
+
+  正常にインストールされていれば、sn.ini の変更は特に必要ありません。
+  ただし「４ インストール」において「SN Build Tools」をインストールしてしまっ
+  た場合、インストーラは、\pssn\bin\sn.ini を上書きしてしまいます。このため保
+  存用ファイルとして、sn_SCE.ini が収められています。
+  もし sn.ini を上書きしてしまった場合は、必ず sn.ini を sn_SCE.ini と同じ内容
+  に戻して下さい。
+      > ren sn.ini sn_000.ini
+      > copy sn_SCE.ini sn.ini
+
+
+●７ DOS版デバッガ(dbugpsx)との併用について
+
+  SN Debugger for Windows 環境では、従来必要だった dexbios, H25bios, resetps,
+  run 等のターゲット制御ツールは必要ありません。
+  ただし、CD-ROMエミュレータを使用する際は、これまでと同様に cdbios, cddisk, 
+  buildcd 等をDOS窓から起動する必要があります。
+
+  DOS版デバッガ dbugpsx と SN Debugger for Windows を同時に使用する事はできま
+  せん。SN File Server や SN Debugger for Windows を起動していない状態では、こ
+  れまでと同様に dbugpsx が使用できます。
+
+
+●８ H2500ドライバの手動インストール
+
+  H2500ドライバの手動インストールの方法について述べます。通常は自動的にインス
+  トールされますので、手動インストールは必要ありません。
+  ドライバ関係のファイルは、通常以下の場所に格納されています。
+
+     H2500.vxd    C:\WINDOWS\SYSTEM
+     H2500.inf    C:\WINDOWS\INF
+
+  手動インストールは以下の手順で行なってください。
+
+  (1) H2500.vxd が c:\WINDOWS\SYSTEM の下にある事を確認する。
+  (2) H2500.inf を適当なディレクトリにコピーする。
+      （C:\WINDOWS\INFは通常隠されていて見えないため）
+  (3) [コントロールパネル→ハードウェア] をクリック
+  (4) [自動的に検出しますか？] で [いいえ] を選択
+  (5) [ハードウェアの種類] で [その他のデバイス] を選択
+  (6) デバイス一覧が表示されるが、[ディスク使用] を選択
+  (7) (2)で H2500.inf をコピーしたディレクトリを指定
+  (8) [Sony PlayStation DTLH2500 PCI Card] を選択
+  (9) 完了。PCを再起動
+
+
+以上
