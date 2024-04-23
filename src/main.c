@@ -44,12 +44,12 @@ struct {
 } Camera = {0};
 
 struct {
-		int x,xv;
-		int y,yv;
-		int z,zv;
-		int pan,panv;
-		int til,tilv;
-	} Player = {0};
+    int x,xv;
+    int y,yv;
+    int z,zv;
+    int pan,panv;
+    int til,tilv;
+} Player = {0};
 
 int main();
 void PutObject(VECTOR pos, SVECTOR rot, GsDOBJ2 *obj);
@@ -86,6 +86,7 @@ void init(){
 
     GsSetLightMode(0);
 
+    PadInit(0);
     PCinit();
 }
 
@@ -100,7 +101,7 @@ void Display(){
 
     VSync(0);
     GsSwapDispBuff();
-    GsSortClear(0, 64, 0, &myOT[myActiveBuff]);
+    GsSortClear(10, 10, 10, &myOT[myActiveBuff]);
     GsDrawOt(&myOT[myActiveBuff]);
 }
 
@@ -182,6 +183,7 @@ unsigned char *LoadFromPC(char *filename)
 
 int main()
 {
+    int PadStatus;
     VECTOR obj_pos={0};
     SVECTOR obj_rot={0};
 
@@ -198,7 +200,7 @@ int main()
 	Player.y = ONE*510;
 	Player.z = ONE*800;
 	
-	Player.pan = -660;
+	Player.pan = -ONE/4;
 	Player.til = -245;
 
     Camera.pos.vx = Player.x/ONE;
@@ -212,16 +214,45 @@ int main()
     unsigned char *cube_tmd;
     cube_tmd = LoadFromPC("CUBE.TMD");
     ObjectCount += LinkModel((u_long *)cube_tmd, &Objects[ObjectCount]);
-    ObjectCount += LinkModel((u_long *)tmd_bulb, &Objects[ObjectCount]);
+    //ObjectCount += LinkModel((u_long *)tmd_bulb, &Objects[ObjectCount]);
 
     Objects[0].attribute = 0; // re-enable lighting
 
     while(1)
     {
+        PadStatus = PadRead(0);
+
+        if (PadStatus & PADLup)		obj_pos.vy -= 6;
+		if (PadStatus & PADLdown)	obj_pos.vy += 6;
+		if (PadStatus & PADLleft)	obj_pos.vz -= 6;
+		if (PadStatus & PADLright)	obj_pos.vz += 6;
+        if (PadStatus & PADL1)		obj_pos.vx -= 6;
+        if (PadStatus & PADR1)		obj_pos.vx += 6;
+
+        if (PadStatus & PADL2)		Player.pan -= 6;
+        if (PadStatus & PADR2)		Player.pan += 6;
+
+        if (PadStatus & PADRup) Player.x -= 6;
+        if (PadStatus & PADRdown) Player.x += 6;
+        if (PadStatus & PADRleft) Player.z -= 6;
+        if (PadStatus & PADRright) Player.z += 6;
+
+
+        if (Player.pan > -50 && Player.pan < 50)
+        {
+            printf("Player pan: %d\n", Player.pan);
+        }
+
+        Camera.pos.vx = Player.x/ONE;
+		Camera.pos.vy = Player.y/ONE;
+		Camera.pos.vz = Player.z/ONE;
+		Camera.rot.vy = -Player.pan;
+		Camera.rot.vx = -Player.til;
+
         PrepDisplay();
         CalculateCamera();
         PutObject(obj_pos, obj_rot, &Objects[0]);
-        PutObject(bulb_pos, bulb_rot, &Objects[1]);
+       // PutObject(bulb_pos, bulb_rot, &Objects[1]);
         Display();
     }
 }
