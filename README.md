@@ -45,7 +45,7 @@ These tools are included in this repository. If you wish to clone or download th
     - [Download page](https://gnuwin32.sourceforge.net/packages/make.htm). Install "Complete package, except sources" if you don't know which one to download
     - Alternatively, and probably the recommended approach is to use this installation method using the [`pcsx-redux` provided mips installation script](https://github.com/ABelliqueux/nolibgs_hello_worlds?tab=readme-ov-file#windows)
 - **mipsel-none-elf-gcc-11.2.0.exe**:
-    - A mips compiler that can be used to compile the project for targeting PSX.
+    - A [mips](https://en.wikipedia.org/wiki/MIPS_architecture) compiler that can be used to compile the project for targeting PSX.
     - [Download page](https://static.grumpycoder.net/pixel/mips/)
 - **gdb-multiarch**:
     - A gdb client that can connect to the pscx-redux emulator gdb server.
